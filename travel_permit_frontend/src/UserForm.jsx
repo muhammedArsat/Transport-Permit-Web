@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import './css/UserForm.css';
 import Sidebar from './components/Sidebar';
+import { useParams } from 'react-router-dom';
 function Form() {
   const [name, setName] = useState('');
   const [vehicleNo, setVehicleNo] = useState('');
@@ -13,6 +14,8 @@ function Form() {
   const [toDate, setToDate] = useState('');
   const [vehicleMode, setVehicleMode] = useState('');
   const [amount, setAmount] = useState('');
+
+  const {email} = useParams();
 
   const statesAndUTs = [
     "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", 
@@ -37,6 +40,7 @@ function Form() {
       toDate,
       vehicleMode,
       amount,
+      email,
     };
     fetch("http://localhost:8080/transportpermit/add-user-form", {
       method: "POST",
@@ -101,6 +105,15 @@ function Form() {
       <div className="form">
         <h1 className="form-head">USER DETAILS</h1>
         <form className="form-body">
+          <div className="form-group">
+            <label htmlFor="email">EMAIL</label>
+            <input
+              type="text"
+              id="email"
+              value={email}
+              readOnly
+            />
+          </div>
           <div className="form-group">
             <label htmlFor="name">NAME</label>
             <input

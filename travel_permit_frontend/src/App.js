@@ -25,7 +25,7 @@ function App() {
       element:<UserLogin/>
     },
     {
-      path:"/user-home",
+      path:"/user-home/:email",
       element:<UserHome/>
     },
     {
@@ -33,11 +33,11 @@ function App() {
       element:<UserRegister/>
     },
     {
-      path:"/user-form",
+      path:"/user-form/:email",
       element:<UserFrom/>
     },
     {
-      path:"/takal-form",
+      path:"/takal-form/:email",
       element:<TakalUserForm/>
     },
     {
