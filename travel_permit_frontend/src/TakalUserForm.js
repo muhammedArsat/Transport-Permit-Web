@@ -101,7 +101,7 @@ const TakalUserForm = () => {
             <div style={{display:'flex'}}>
                 <Sidebar/>
                     <div className="form">
-                    <h1 className="form-head">Takal User Details</h1>
+                    <h1 className="form-head">Tatkaal User Details</h1>
                     <form className="form-body">
                     <div className="form-group">
                         <label htmlFor="name">NAME</label>
