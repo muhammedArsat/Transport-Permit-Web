@@ -13,7 +13,7 @@ const Sidebar = () => {
       const currentDate = new Date();
       const currentHour = currentDate.getHours();
 
-      if(currentHour >= 11 && currentHour <12)
+      if(currentHour >= 15 && currentHour <19)
       {
         takkal(true)
       }
