@@ -1,0 +1,229 @@
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .header img {
+    position: absolute;
+    top: 20px; 
+    left: 20px; 
+    width: 50px; 
+    height: auto;
+  }
+  
+  .header h1 {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, rgb(246, 96, 121), rgb(246, 0, 123), #816694);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin: 0 auto;
+  }
+  
+  .header a {
+    background: linear-gradient(to bottom, rgb(246, 96, 121), rgb(246, 0, 123), #816694);
+    -webkit-background-clip: icon;
+    color: white;
+    height: 40px;
+    width: 45px;
+    border-radius: 50%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    position: relative;
+  }
+  
+  .line {
+    width: 100vw; /* Ensure it takes the full viewport width */
+    height: 10px;
+    background: linear-gradient(to right, rgb(246, 96, 121), rgba(171, 46, 255, 0.679), #816694);
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove padding */
+  }
+  
+  .page {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    box-shadow: 0 0 10px 0 rgba(254, 88, 149, 0.9);
+    width: 700px;
+    height: 400px;
+    background: linear-gradient(to right, #BB6D64 50%, white 50%);
+    border-radius: 10px;
+    overflow: hidden;  
+    margin-top: 100px;
+  }
+  .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+  }
+  .logins{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px 0 rgba(254, 88, 149, 0.9);
+    width: 700px;
+    height: 400px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;  
+    margin-top: 100px;
+  }
+  
+  .box img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+  }
+  h1 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+  }
+  button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #816694; 
+    color: white;
+    font-size: 16px;
+    cursor: pointer; 
+  }
+  button:hover {
+    background-color: #51415d; 
+  }
+  .whiteBox {
+    background: white;
+  }
+  .whiteBox h1 {
+    background: linear-gradient(to bottom, rgb(246, 96, 121), rgb(255, 67, 161), #816694);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  .pinkBox {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background: #BB6D64;
+  }
+  .pinkBox h1 {
+    display: none;
+  }
+  .registerText {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .pinkBox button{
+    color: rgb(230, 116, 1);
+    border-radius: 10px;
+    height: 40px;
+    width: 200px;
+    background-color: white;
+    text-decoration: none;
+  }
+  .media_register {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .header h1 {
+      font-family: 'Poppins';
+      font-size: 10px;
+      margin-top: 35px;
+      padding-right: 280px;
+    }
+  
+    .header img {
+      width: 30px;
+      height: 30px;
+    }
+    .line {
+      margin-top: 0px;
+      width: 100%;
+      height: 4px;
+    }
+    .box {
+      width: 100%;
+    }
+    
+    .page {
+      margin-top: 50px;
+      width: 100%;
+      height: auto;
+      flex-direction: column;
+      box-shadow: none;
+      background: none; }
+    .pinkBox {
+      width: 100%;
+      height: 100px;
+      background-color: white;
+      font-size: 14px; 
+    }
+    .registerText {
+      display: none;
+    }
+   
+    .whiteBox h1 {
+      display: none;
+    }
+    .pinkBox h1 {
+      display: block;
+      margin-top: 50px;
+      font-family: 'Poppins';
+      background: linear-gradient(to bottom, rgb(246, 96, 121), rgba(230, 1, 131, 0.799), #816694);
+      -webkit-background-clip: text;
+      color: transparent;
+      font-size: 36px;
+    }
+    .pinkBox a {
+      display: none;
+    }
+    .whiteBox {
+      width: 100%;
+      padding: 20px;
+      box-shadow: none; 
+    }
+    input {
+      padding: 12px;
+      margin: 8px 0;
+    }
+    button {
+      padding: 12px;
+    }
+    button:hover {
+      background-color: #51415d; 
+    }
+    .media_register{
+      display: block;
+      
+    }
+    .media_register a{
+      color: #51415d;
+    }
+    .media_register h4 {
+      margin-left:150px ;
+    }
+    .whiteBox a{
+      margin-left:200px;
+    }
+  }
+  
