@@ -16,12 +16,9 @@ import TatkalPending from './TatkalPending';
 
 function App() {
   const router = createBrowserRouter([
+   
     {
       path:"/",
-      element:<LandingPage/>
-    },
-    {
-      path:"/user_login",
       element:<UserLogin/>
     },
     {

@@ -1,7 +1,7 @@
 import React from "react";
 import '../css/Sidebar.css';
 import { useState,useEffect } from "react";
-import { useNavigate ,Link, useParams} from "react-router-dom";
+import { Link, useParams} from "react-router-dom";
 
 
 const Sidebar = () => {
@@ -30,9 +30,10 @@ const Sidebar = () => {
     return ()=>clearInterval(interval);
   },[]);
 
-const navigate = useNavigate();
+
 const handleLogout= () =>{
-navigate("/")
+  localStorage.removeItem("accesToken");
+  window.location.href="/";
 
 }
   return (

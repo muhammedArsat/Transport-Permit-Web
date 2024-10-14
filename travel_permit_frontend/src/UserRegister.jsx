@@ -50,7 +50,7 @@ export default function Register() {
   
 
   return (
-    <div className='App'>
+    <div className='App' style={{padding:"10px"}}>
       <div className="header">
       <img src={img} alt="Login" />
         <h1>Transport Permit</h1> 
@@ -62,7 +62,7 @@ export default function Register() {
           <h1>Register</h1>
           <p className="registerText">Already Registered?</p>
           <p className="registerText">Login now!</p><br/>
-          <button variant="conatined" onClick={()=>navigate('/user_login')}><b>Go to Login</b></button>
+          <button variant="conatined" onClick={()=>navigate('/')}><b>Go to Login</b></button>
         </div>
         <div className="box whiteBox">
           <h1>Register</h1>
