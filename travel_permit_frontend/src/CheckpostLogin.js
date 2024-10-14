@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import img from './images/TWP logo.png'; 
-// import './css/LoginRegister.css';
+import './css/Login.css';
 import './App.css'
 import {useNavigate } from "react-router-dom";
 
@@ -32,11 +32,7 @@ export default function UserLogin() {
         console.log("Server Response:", data); // Debugging: Check the server's response
         if (data.message === "Login successful") {
           navigate("/user-form");
-        }
-        else if(data.message==="Incorrect password"){
-          alert('Incorrect password')
-        }
-         else if (data.message === "User not registered") {
+        } else if (data.message === "User not registered") {
           alert('User not registered. Redirecting to register page.');
           navigate("/user-register");
         } else {

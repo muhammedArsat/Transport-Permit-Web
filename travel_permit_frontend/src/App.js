@@ -1,4 +1,5 @@
 import {RouterProvider,createBrowserRouter} from 'react-router-dom';
+import LandingPage from './LandingPage';
 import UserLogin from "./UserLogin"
 import UserRegister from "./UserRegister";
 import UserFrom from "./UserForm";
@@ -17,6 +18,10 @@ function App() {
   const router = createBrowserRouter([
     {
       path:"/",
+      element:<LandingPage/>
+    },
+    {
+      path:"/user_login",
       element:<UserLogin/>
     },
     {
