@@ -10,6 +10,7 @@ import CheckHome from './CheckHome';
 import CheckVerify from './CheckpostVerify';
 import './App.css'
 import UserHome from './UserHome';
+import UserDashboard from './UserDashboard';
 
 function App() {
   const router = createBrowserRouter([
@@ -40,6 +41,10 @@ function App() {
     {
       path:"/admin-landingpage",
       element:<AdminLandingPage/>
+    },
+    {
+      path:"/user-dashboard",
+      element:<UserDashboard/>
     },
     {
       path:"/approved-list",

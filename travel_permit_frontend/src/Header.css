@@ -1,0 +1,16 @@
+.head{
+    background-color: #f4f4f4;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .head h1 {
+    margin: 0;
+  }
+  
+  .user {
+    font-size: 14px;
+  }
+  

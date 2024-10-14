@@ -51,7 +51,7 @@ const TakalUserForm = () => {
         })
         .then((message) => {
           window.alert(message); // Display plain text message from backend
-  
+          
           // Clear the form fields
           setName('');
           setVehicleNo('');
