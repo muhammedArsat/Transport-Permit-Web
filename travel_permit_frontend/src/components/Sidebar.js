@@ -43,7 +43,7 @@ navigate("/")
       <Link to={`/user-home/${email}`}> <li>Home</li></Link>
         <Link to={`/user-form/${email}`}><li>Normal Form</li></Link>
         {istakkal ?(
-        <Link to={`/takal-form/${email}`}><li>Takal Form</li></Link>
+        <Link to={`/takal-form/${email}`}><li>Takkaal Form</li></Link>
         ):(<li style={{color:"gray"}}>Takkal Form(only open between 11 am to 12 pm)</li>)
 
         }
