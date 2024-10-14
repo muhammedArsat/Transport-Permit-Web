@@ -31,7 +31,7 @@ export default function UserLogin() {
       .then(data => {
         console.log("Server Response:", data); // Debugging: Check the server's response
         if (data.message === "Login successful") {
-          navigate("/user-form");
+          navigate(`/user-home/${email}`);
         } else if (data.message === "User not registered") {
           alert('User not registered. Redirecting to register page.');
           navigate("/user-register");
