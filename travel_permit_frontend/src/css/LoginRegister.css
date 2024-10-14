@@ -181,6 +181,7 @@ button:hover {
   .registerText {
     display: none;
   }
+ 
   .whiteBox h1 {
     display: none;
   }
@@ -213,8 +214,12 @@ button:hover {
   }
   .media_register{
     display: block;
+    
   }
-  .media_register h4{
+  .media_register a{
+    color: #51415d;
+  }
+  .media_register h4 {
     margin-left:150px ;
   }
   .whiteBox a{

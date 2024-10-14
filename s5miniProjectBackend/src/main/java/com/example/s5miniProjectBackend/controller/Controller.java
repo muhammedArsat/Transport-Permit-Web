@@ -4,16 +4,24 @@ import com.example.s5miniProjectBackend.entity.TakalUser;
 import com.example.s5miniProjectBackend.dto.UserLoginRequest;
 import com.example.s5miniProjectBackend.dto.UserLoginResponse;
 import com.example.s5miniProjectBackend.entity.UserRegister;
+import com.example.s5miniProjectBackend.repository.TakalUserRepository;
 import com.example.s5miniProjectBackend.repository.UserRegisterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 
 import com.example.s5miniProjectBackend.entity.UserForm;
 import com.example.s5miniProjectBackend.service.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.swing.text.html.parser.Entity;
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -26,7 +34,8 @@ public class Controller {
 
     @Autowired
     public UserRegisterRepository userRegisterRepository;
-
+    @Autowired
+ public TakalUserRepository takalUserRepository;
 
 /*
 User login code
@@ -38,13 +47,17 @@ User login code
         String password = loginRequest.getPassword();
 
         // Query the register table
-        UserRegister user = userRegisterRepository.findByEmailAndPassword(email, password);
+        UserRegister user = userRegisterRepository.findByEmail(email);
         if (user != null) {
 
             if (user.getEmail().equalsIgnoreCase(email) && user.getPassword().equalsIgnoreCase(password)) {
                 // Login successful
                 return new UserLoginResponse(true, "Login successful");
-            } else {
+            }
+            else if(user.getEmail().equalsIgnoreCase(email) && !user.getPassword().equalsIgnoreCase(password)) {
+                    return new UserLoginResponse(false,"Incorrect password");
+            }
+            else {
 
                 return new UserLoginResponse(false, "Incorrect email and password");
             }
@@ -90,25 +103,33 @@ ADD USER FORM CODE
         return service.getAllUserDetails();
     }
     
-    /*post Tatkkal user form */
-    @PostMapping("/takaladd")
-	public String takaladd(@RequestBody TakalUser detail) {
-		service.savetakaldetails(detail);
-		return "User Details Added Successfully!!!";
-	}    
-    
+
+
+
+    /*
+
+     */
     @PostMapping("/add-to-approval-list")
     public String addApprovedList(@RequestBody UserForm userForm)
     {
         service.addApprovedList(userForm);
         return "SuccessFull";
     }
+
+
+    /*
+    Admin Approve For Normal Form
+     */
     @PutMapping("/status-change/{id}")
     public ResponseEntity<UserForm> editStatus(@PathVariable Integer id)
     {
         UserForm userForm = service.editStatus(id);
         return  ResponseEntity.ok(userForm);
     }
+
+    /*
+    Pending List Want to Check By Verifier in CheckPost
+     */
     @GetMapping("/pending-list")
     public ResponseEntity<List<UserForm>> getPendingList()
     {
@@ -122,10 +143,58 @@ ADD USER FORM CODE
         List<UserForm> approvedList = service.getApprovedList();
         return  ResponseEntity.ok(approvedList);
     }
+    /*
+    Verifier Verified the Car
+     */
     @PutMapping("/passed-status/{id}")
     public ResponseEntity<UserForm> passedVehicle(@PathVariable Integer id)
     {
         UserForm userForm = service.passedVehicle(id);
         return  ResponseEntity.ok(userForm);
     }
+/*
+Showing Passed vehicle in Admin's Passed Page
+ */
+    @GetMapping("/passed-list")
+    ResponseEntity<List<UserForm>> getPassedList()
+    {
+        List<UserForm> passedList = service.getPassedList();
+        Collections.reverse(passedList);
+        return  ResponseEntity.ok(passedList);
+    }
+
+
+
+/*
+Takkal API's
+ */
+
+    /*
+    To Add Details for Takkal Applicants
+     */
+    @PostMapping("/takaladd")
+    public String takaladd(@RequestBody TakalUser detail) {
+        service.savetakaldetails(detail);
+        return "User Details Added Successfully!!!";
+    }
+
+    /*
+    Get the Takkal List
+     */
+    @GetMapping("/takkal-list")
+    public ResponseEntity<List<TakalUser>> getTakkalPendingList()
+    {
+        List<TakalUser> takalUsers = service.getPendingTakkalUser();
+        return ResponseEntity.ok(takalUsers);
+    }
+
+    /*
+    Change the Takkal Approval Form to Approved
+     */
+   @PutMapping("/takkal-list/{id}")
+    ResponseEntity<TakalUser> takkalStatusChange(@PathVariable Integer id)
+   {
+       TakalUser takalUser = service.takkalApproved(id);
+       return ResponseEntity.ok(takalUser);
+   }
 }

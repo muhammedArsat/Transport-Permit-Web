@@ -1,4 +1,5 @@
 import {RouterProvider,createBrowserRouter} from 'react-router-dom';
+import LandingPage from './LandingPage';
 import UserLogin from "./UserLogin"
 import UserRegister from "./UserRegister";
 import UserFrom from "./UserForm";
@@ -11,15 +12,21 @@ import CheckVerify from './CheckpostVerify';
 import './App.css'
 import UserHome from './UserHome';
 import UserDashboard from './UserDashboard';
+import PassedList from './PassedList';
+import TatkalPending from './TatkalPending';
 
 function App() {
   const router = createBrowserRouter([
     {
       path:"/",
+      element:<LandingPage/>
+    },
+    {
+      path:"/user_login",
       element:<UserLogin/>
     },
     {
-      path:"/user-home",
+      path:"/user-home/:email",
       element:<UserHome/>
     },
     {
@@ -27,11 +34,11 @@ function App() {
       element:<UserRegister/>
     },
     {
-      path:"/user-form",
+      path:"/user-form/:email",
       element:<UserFrom/>
     },
     {
-      path:"/takal-form",
+      path:"/takal-form/:email",
       element:<TakalUserForm/>
     },
     {
@@ -57,6 +64,14 @@ function App() {
     {
       path:"/check-verify",
       element:<CheckVerify/>
+    },
+    {
+      path:"/passed-list",
+      element:<PassedList/>
+    },
+    {
+      path:"/takkal-pending",
+      element:<TatkalPending/>
     }
   ])
   return (

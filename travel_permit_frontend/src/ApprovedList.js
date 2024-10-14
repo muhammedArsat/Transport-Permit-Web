@@ -22,8 +22,11 @@ export default function ApprovedList() {
         <div style={{ textAlign: "center" }}>
           <h1>Approved List</h1>
         </div>
+        <div style={{marginLeft:"50px",marginRight:"50px"}}>
+
         <table>
           <tr>
+            <th>Permit Id</th>
             <th>Name</th>
             <th>Vehicle No</th>
             <th>License Number</th>
@@ -34,9 +37,11 @@ export default function ApprovedList() {
             <th>To Date</th>
             <th>Vehicle Mode</th>
             <th>Amount payed</th>
+            <th>Status</th>
           </tr>
           {approved.map((show) => (
             <tr>
+              <th>{show.id}</th>
               <th>{show.name}</th>
               <th>{show.vehicleNo}</th>
               <th>{show.licenseNo}</th>
@@ -47,10 +52,13 @@ export default function ApprovedList() {
               <th>{show.toDate}</th>
               <th>{show.vehicleMode}</th>
               <th>{show.amount}</th>
+              <th>{show.status}</th>
             </tr>
           ))}
         </table>
       </div>
+      </div>
+
     </div>
   );
 }

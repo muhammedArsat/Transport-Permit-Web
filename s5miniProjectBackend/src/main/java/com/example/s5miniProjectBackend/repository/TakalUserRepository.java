@@ -5,7 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import com.example.s5miniProjectBackend.entity.TakalUser;
 
+import java.util.List;
+
 @Repository
 public interface TakalUserRepository extends JpaRepository<TakalUser, Integer> {
+
+    List<TakalUser> findByStatus(String pending);
 
 }

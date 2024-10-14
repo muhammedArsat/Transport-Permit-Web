@@ -8,6 +8,6 @@ public class S5miniProjectBackendApplication {
 	public static void main(String[] args) {
 
 		SpringApplication.run(S5miniProjectBackendApplication.class, args);
-		System.out.println("Application Started");
+		System.out.println("Backend Started");
 	}
 }

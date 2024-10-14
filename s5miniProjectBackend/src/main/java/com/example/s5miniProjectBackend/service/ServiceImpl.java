@@ -97,6 +97,30 @@ public class ServiceImpl implements Service{
         return null;
     }
 
+    @Override
+    public List<UserForm> getPassedList() {
+        return userFormRepository.findByStatus("Passed");
+    }
+
+    @Override
+    public List<TakalUser> getPendingTakkalUser() {
+        return takaluserRepository.findByStatus("Pending");
+    }
+
+    @Override
+    public TakalUser takkalApproved(Integer id) {
+        Optional<TakalUser> existingTakal = takaluserRepository.findById(id);
+        if(existingTakal.isPresent())
+        {
+            TakalUser takalUser = existingTakal.get();
+            takalUser.setStatus("Approved");
+            takaluserRepository.save(takalUser);
+        }
+
+            return null;
+
+    }
+
 
 
 

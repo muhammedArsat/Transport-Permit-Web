@@ -1,37 +1,56 @@
-import React, { useState } from 'react';
-import '../css/Sidebar.css'; // Add your CSS file for styling
+
+import React from "react";
+import '../css/Sidebar.css';
+import { useState,useEffect } from "react";
+import { useNavigate ,Link, useParams} from "react-router-dom";
+
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false);
 
-  const openNav = () => {
-    setIsOpen(true);
-  };
+  const {email} = useParams();
 
-  const closeNav = () => {
-    setIsOpen(false);
-  };
+  const[istakkal,takkal]=useState(false);
 
+  useEffect(()=>{
+    const checkTime =()=>{
+      const currentDate = new Date();
+      const currentHour = currentDate.getHours();
+
+      if(currentHour >= 15 && currentHour <19)
+      {
+        takkal(true)
+      }
+      else{
+        takkal(false)
+      }
+    }
+
+    checkTime();
+    const interval = setInterval(checkTime,60000);
+
+    return ()=>clearInterval(interval);
+  },[]);
+
+const navigate = useNavigate();
+const handleLogout= () =>{
+navigate("/")
+
+}
   return (
-    <div>
-      <div className="mobile-menu">
-        <span style={{ fontSize: '20px', cursor: 'pointer' }} onClick={openNav}>
-          &#9776; open
-        </span>
-      </div>
-      <div id="mySidenav" className={`sidenav ${isOpen ? 'open' : ''}`}>
-        <h2>Transport permit</h2>
-        <hr/>
-        <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>
-          &times;
-        </a>
-        <ul>
-        <a href="/user-home"><li>Home</li></a>
-        <a href="/user-form"><li>Normal Form</li></a>
-        <a href="/takal-form"><li>Takal Form</li></a>
-        <a href="/user-dashboard"><li>Dashboard</li></a>
-        </ul>
-      </div>
+    <div className="sidebar">
+      <h3>Transport Permit</h3>
+      <hr></hr>
+      <ul>
+      <Link to={`/user-home/${email}`}> <li>Home</li></Link>
+        <Link to={`/user-form/${email}`}><li>Normal Form</li></Link>
+        {istakkal ?(
+        <Link to={`/takal-form/${email}`}><li>Takkaal Form</li></Link>
+        ):(<li style={{color:"gray"}}>Takkal Form(only open between 11 am to 12 pm)</li>)
+
+        }
+      <Link to={`/user-dashboard/${email}`}><li>Dashboard</li></Link>
+        <li onClick={handleLogout}>Logout</li>
+      </ul>
     </div>
   );
 };

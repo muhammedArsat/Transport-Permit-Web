@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './css/UserForm.css';
 import Sidebar from './components/Sidebar';
+import { useParams } from 'react-router-dom';
 const TakalUserForm = () => {
     const [name, setName] = useState('');
     const [vehicleNo, setVehicleNo] = useState('');
@@ -12,6 +13,8 @@ const TakalUserForm = () => {
     const [toDate, setToDate] = useState('');
     const [vehicleMode, setVehicleMode] = useState('');
     const [amount, setAmount] = useState('');
+
+    const {email} = useParams();
 
     const statesAndUTs = [
         "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", 
@@ -36,6 +39,7 @@ const TakalUserForm = () => {
         toDate,
         vehicleMode,
         amount,
+        email,
       };
   
       fetch("http://localhost:8080/transportpermit/takaladd", {
@@ -101,8 +105,17 @@ const TakalUserForm = () => {
             <div style={{display:'flex'}}>
                 <Sidebar/>
                     <div className="form">
-                    <h1 className="form-head">Takal User Details</h1>
+                    <h1 className="form-head">Tatkaal User Details</h1>
                     <form className="form-body">
+                    <div className="form-group">
+                      <label htmlFor="email">EMAIL</label>
+                      <input
+                        type="text"
+                        id="email"
+                        value={email}
+                        readOnly
+                      />
+                    </div>
                     <div className="form-group">
                         <label htmlFor="name">NAME</label>
                         <input

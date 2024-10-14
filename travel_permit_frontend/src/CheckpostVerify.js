@@ -3,6 +3,10 @@ import Navbar from "./components/ChcekNavbar";
 import "./css/CheckPostVerify.css";
 export default function CheckpostVerify() {
     const[approved,setapproved] = useState([]);
+    const[search,setsearch] = useState("");
+  const handleSearch = (e) =>{
+    setsearch(e.target.value)
+  }
 
     const handlePassed = async(id) =>{
         try{
@@ -37,13 +41,18 @@ export default function CheckpostVerify() {
         }
         fetchapprovedlist();
     },[])
+
+    
+    const filteredList = approved.filter((item) =>
+      item.id.toString().includes(search)
+  );
   return (
     <div style={{ display: "flex", justifyContent: "space-between" }}>
       <Navbar />
       <div className="maincontent">
         <h1> Verification Page</h1>
         <div className="searchbox">
-          <input type="search" placeholder="search Id Here" />
+          <input type="search" placeholder="search Id Here" value={search} onChange={handleSearch} />
           <button>Search</button>
         </div>
         <table>
@@ -64,7 +73,7 @@ export default function CheckpostVerify() {
           </tr>
           </thead>
           <tbody>
-          {approved.map((show)=>(
+          {filteredList.map((show)=>(
                      
             <tr key={show.id}>
                 <th>{show.id}</th>
@@ -84,6 +93,7 @@ export default function CheckpostVerify() {
             </tr>
             
           ))}
+          
           </tbody>
           
         </table>
