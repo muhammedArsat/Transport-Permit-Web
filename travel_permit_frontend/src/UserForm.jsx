@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './css/UserForm.css';
-import Sidebar from './components/Sidebar';
+
 import { useParams } from 'react-router-dom';
 
 function Form() {
@@ -196,7 +196,7 @@ function Form() {
   return (
     <div>
       <div style={{ display: 'flex' }}>
-        <Sidebar />
+       
         <div className="form">
           <h1 className="form-head">USER DETAILS</h1>
           <form className="form-body">
