@@ -1,5 +1,5 @@
 import React from 'react'
-import Sidebar from './components/Sidebar'
+import './css/UserHome.css'
 
 export default function UserHome() {
   return (

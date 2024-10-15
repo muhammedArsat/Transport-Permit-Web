@@ -13,6 +13,7 @@ body{
     color: white;
     transform: translateX(0);
     transition: transform 1s ease-in;
+    width: 200px;
 
   
 }
