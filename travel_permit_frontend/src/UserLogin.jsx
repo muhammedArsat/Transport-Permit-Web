@@ -79,7 +79,7 @@ export default function UserLogin() {
         <a href="/dummy"><br></br>Forget password?</a>
       </div>
       <div className='media_register'>
-        <h4>New user?  <a href="/register">Register now</a></h4>
+        <h4>New user?  <a href="/user-register">Register now</a></h4>
       
       </div>
     </div>
