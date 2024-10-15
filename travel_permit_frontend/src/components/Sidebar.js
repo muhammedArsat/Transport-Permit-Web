@@ -12,7 +12,7 @@ const Sidebar = (isOpen) => {
       const currentDate = new Date();
       const currentHour = currentDate.getHours();
 
-      if (currentHour >= 15 && currentHour < 19) {
+      if (currentHour >= 1 && currentHour < 24) {
         setTakkal(true);
       } else {
         setTakkal(false);
