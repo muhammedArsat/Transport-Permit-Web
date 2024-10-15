@@ -1,7 +1,6 @@
 /* Sidebar styling */
 .sidebar {
   width: 250px;
-<<<<<<< HEAD
   background: linear-gradient(to bottom, rgb(246, 96, 121), rgb(255, 67, 161), #816694);
   color: white;
   padding: 20px;
@@ -97,7 +96,7 @@
     font-size: 20px;
     cursor: pointer;
     border-radius: 5px;
-=======
+
   background-color: hsl(240, 94%, 6%);
   color: white;
   padding: 20px;
@@ -179,6 +178,6 @@ a {
 
   .hamburger {
     display: none; /* Hide hamburger icon */
->>>>>>> fb2707d21a481f358c0cbc3453d71cef365abcc5
   }
+}
 }
