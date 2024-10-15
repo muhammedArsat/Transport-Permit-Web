@@ -21,6 +21,15 @@ public class TakalUser {
 	private String vehicleMode;
 	private String amount;
 	private String status = "pending";
+	private String email;
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public void setId(Integer id) {
 		this.id = id;

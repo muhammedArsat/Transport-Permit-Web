@@ -50,7 +50,7 @@ export default function Register() {
   
 
   return (
-    <div className='App'>
+    <div className='App' style={{padding:"10px"}}>
       <div className="header">
       <img src={img} alt="Login" />
         <h1>Transport Permit</h1> 
