@@ -17,14 +17,9 @@
   text-align: center;
   margin-bottom: 20px;
   font-size: 1.5rem;
-<<<<<<< HEAD
   background: linear-gradient(to bottom, rgb(246, 96, 121), rgba(230, 1, 131, 0.799), #816694);
   -webkit-background-clip:text;
-=======
-  background: linear-gradient(to bottom,hsl(240, 62%, 66%), hsl(240, 94%,6%), #9321e5);
-  -webkit-background-clip: text;
->>>>>>> fb2707d21a481f358c0cbc3453d71cef365abcc5
-  color: transparent;
+
 }
 
 .form-body {
