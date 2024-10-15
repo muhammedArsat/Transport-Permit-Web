@@ -100,8 +100,8 @@ function Form() {
   return (
     <div>
      
-      <div style={{display:'flex'}}>
-      <Sidebar/>
+  
+     
       <div className="form">
         <h1 className="form-head">USER DETAILS</h1>
         <form className="form-body">
@@ -236,7 +236,7 @@ function Form() {
           </div>
         </form>
       </div>
-      </div>
+   
     </div>
   );
 }
