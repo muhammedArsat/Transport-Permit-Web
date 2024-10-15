@@ -283,6 +283,7 @@ function Form() {
                 required
                 value={fromPlace}
                 onChange={(e) => {
+                  setFromPlace(e.target.value);
                 }}
               >
                 <option value="">Select a state/UT</option>
