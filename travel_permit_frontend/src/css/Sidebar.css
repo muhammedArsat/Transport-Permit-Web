@@ -1,6 +1,9 @@
 .sidebar {
     width: 250px;
-    background: linear-gradient(to bottom, rgb(246, 96, 121), rgb(255, 67, 161), #816694);
+    background-color: hsl(240, 94%, 6%);
+    /*
+    linear-gradient(to bottom, rgb(246, 96, 121), rgb(255, 67, 161), #816694);
+    */
     color: white;
     padding: 20px;
     height: 100vh;
@@ -38,10 +41,10 @@
   }
   
   .sidebar ul li:hover {
-    background-color: #6c4588;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(108, 69, 136, 0.5); /* Adjust the opacity as needed */
-}
+    background-color: hsl(240, 94%, 16%);
+  box-shadow: 0 0 10px 4px hsl(240, 94%, 16%);
+  border-radius: 10px; 
+  }
 
 a{
   text-decoration: none;
