@@ -91,10 +91,10 @@ export default function Register() {
           alert(`Server response: ${data}`);
         } else if (data.success) {
           alert('Registration successful!');
-          navigate('/user_login'); 
+          navigate('/'); 
         } else if (data.message === 'User already registered') {
           alert('User already registered. Please log in.');
-          navigate('/user_login'); 
+          navigate('/'); 
         } else {
           alert('Registration failed. Please try again.');
         }
@@ -117,7 +117,9 @@ export default function Register() {
           <h1>Register</h1>
           <p className="registerText">Already Registered?</p>
           <p className="registerText">Login now!</p><br/>
-          <button variant="contained" onClick={() => navigate('/user_login')}><b>Go to Login</b></button>
+
+          <button variant="contained" onClick={()=>navigate('/')}><b>Go to Login</b></button>
+
         </div>
         <div className="box whiteBox">
           <h1>Register</h1>
@@ -175,7 +177,7 @@ export default function Register() {
 
           <div className='media_register'>
             <h4><br></br>Already Registered?</h4>
-            <a href="/user_login"><b>Login Now</b></a>
+            <a href="/"><b>Login Now</b></a>
           </div>
         </div>
       </div>

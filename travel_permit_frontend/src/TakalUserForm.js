@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './css/UserForm.css';
 import Sidebar from './components/Sidebar';
+import { useParams } from 'react-router-dom';
 const TakalUserForm = () => {
     const [name, setName] = useState('');
     const [vehicleNo, setVehicleNo] = useState('');
@@ -12,6 +13,9 @@ const TakalUserForm = () => {
     const [toDate, setToDate] = useState('');
     const [vehicleMode, setVehicleMode] = useState('');
     const [amount, setAmount] = useState('');
+    const [errors,setErrors] = useState({});
+
+    const {email} = useParams();
 
     const statesAndUTs = [
         "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", 
@@ -22,9 +26,92 @@ const TakalUserForm = () => {
         "West Bengal", "Andaman and Nicobar Islands", "Chandigarh", "Dadra and Nagar Haveli and Daman and Diu", 
         "Lakshadweep", "Delhi", "Puducherry", "Ladakh", "Jammu and Kashmir"
       ];
+
+    const validateName = (e) => {
+      if(!name.trim())
+          return "*Name is required."
+      if(name.length < 3)
+          return "*Length must be greater than 2."
+      return ''
+    }
+
+    const validateVehicleNo = (e) => {
+      const regex = /^[A-Za-z]{2}[A-Za-z0-9]{8}$/
+      if(!vehicleNo.trim())
+          return '*Vehicle number is required.'
+      if(!regex.test(vehicleNo) && vehicleNo.length < 10)
+          return '*Vehicle number should start with 2 alphabet and minimum 10 characters.'
+    }
+
+    const validateLicenseNo = (e) => {
+      if(!licenseNo.trim())
+          return "*License Number is required."
+      if (licenseNo.length < 5) {
+        return '*License No must be at least 5 characters long.';
+      }
+      return ''
+    }
+
+    const validateNoOfDays = (no_of_days) => {
+      if (!no_of_days.trim()) {
+        return '*No. of Days is required.';
+      }
+      if (isNaN(no_of_days) || parseInt(no_of_days) <= 0) {
+        return '*No. of Days must be a positive number.';
+      }
+      return '';
+    };
+  
+    const validateFromDate = (fromDate) => {
+      if (!fromDate.trim()) {
+        return '*From Date is required.';
+      }
+      return '';
+    };
+  
+    const validateToDate = (fromDate, toDate) => {
+      if (!toDate.trim()) {
+        return '*To Date is required.';
+      }
+      if (new Date(toDate) <= new Date(fromDate)) {
+        return '*To Date must be after From Date.';
+      }
+      return '';
+    };
+  
+    const validatePlace = (place) => {
+      if (!place.trim()) {
+        return '*Place is required.';
+      }
+      return '';
+    };
   
     const handleClick = (e) => {
       e.preventDefault();
+
+      const nameError = validateName(name);
+      const vehicleError = validateVehicleNo(vehicleNo);
+      const licenseError = validateLicenseNo(licenseNo);
+      const daysError = validateNoOfDays(no_of_days);
+      const fromDateError = validateFromDate(fromDate);
+      const toDateError = validateToDate(fromDate, toDate);
+      const fromPlaceError = validatePlace(fromPlace);
+      const toPlaceError = validatePlace(toPlace);
+
+      if(nameError || vehicleError || licenseError || daysError || fromDateError || toDateError || fromDateError || fromPlaceError || toPlaceError){
+        setErrors({
+          name : nameError,
+          vehicleNo : vehicleError,
+          licenseNo : licenseError,
+          no_of_days : daysError,
+          fromDate : fromDateError,
+          toDate : toDateError,
+          fromPlace : fromPlaceError,
+          toPlace : toPlaceError
+        })
+        return ''
+      }
+
       const detail = {
         name,
         vehicleNo,
@@ -36,6 +123,7 @@ const TakalUserForm = () => {
         toDate,
         vehicleMode,
         amount,
+        email,
       };
   
       fetch("http://localhost:8080/transportpermit/takaladd", {
@@ -63,6 +151,16 @@ const TakalUserForm = () => {
           setToDate('');
           setVehicleMode('');
           setAmount('');
+          setErrors({
+            name : '',
+            vehicleNo : '',
+            licenseNo : '',
+            no_of_days : '',
+            fromDate : '',
+            toDate : '',
+            fromPlace : '',
+            toPlace : ''
+          })
         })
         .catch((error) => {
           console.error("There was a problem with the fetch operation:", error);
@@ -98,11 +196,19 @@ const TakalUserForm = () => {
     };
       return (
           <div>
-            <div style={{display:'flex'}}>
-                <Sidebar/>
+          
                     <div className="form">
-                    <h1 className="form-head">Takal User Details</h1>
+                    <h1 className="form-head">Tatkaal User Details</h1>
                     <form className="form-body">
+                    <div className="form-group">
+                      <label htmlFor="email">EMAIL</label>
+                      <input
+                        type="text"
+                        id="email"
+                        value={email}
+                        readOnly
+                      />
+                    </div>
                     <div className="form-group">
                         <label htmlFor="name">NAME</label>
                         <input
@@ -112,6 +218,7 @@ const TakalUserForm = () => {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         />
+                        {errors.name && <span className='error'>{errors.name}</span>}
                     </div>
                     <div className="form-group">
                         <label htmlFor="vehicle">VEHICLE NO</label>
@@ -122,6 +229,7 @@ const TakalUserForm = () => {
                         value={vehicleNo}
                         onChange={(e) => setVehicleNo(e.target.value)}
                         />
+                        {errors.vehicleNo && <span className='error'>{errors.vehicleNo}</span>}
                     </div>
                     <div className="form-group">
                         <label htmlFor="license">LICENSE NO</label>
@@ -132,6 +240,7 @@ const TakalUserForm = () => {
                         value={licenseNo}
                         onChange={(e) => setLicenseNo(e.target.value)}
                         />
+                        {errors.licenseNo && <span className='error'>{errors.licenseNo}</span>}
                     </div>
                     <div className="form-group">
                         <label htmlFor="vehicle_mode">VEHICLE MODE</label>
@@ -167,6 +276,7 @@ const TakalUserForm = () => {
                         value={no_of_days}
                         onChange={(e) => setNo_Of_Days(e.target.value)}
                         />
+                        {errors.no_of_days && <span className='error'>{errors.no_of_days}</span>}
                     </div>
                     <div className="form-group">
                     <label htmlFor="fromPlace">FROM PLACE</label>
@@ -183,6 +293,7 @@ const TakalUserForm = () => {
                         </option>
                         ))}
                     </select>
+                    {errors.fromPlace && <span className='error'>{errors.fromPlace}</span>}
                     </div>
                     <div className="form-group">
                     <label htmlFor="toPlace">TO PLACE</label>
@@ -199,6 +310,7 @@ const TakalUserForm = () => {
                         </option>
                         ))}
                     </select>
+                    {errors.toPlace && <span className='error'>{errors.toPlace}</span>}
                     </div>
                     <div className="form-group">
                         <label htmlFor="fromDate">FROM DATE</label>
@@ -209,6 +321,7 @@ const TakalUserForm = () => {
                         value={fromDate}
                         onChange={(e) => setFromDate(e.target.value)}
                         />
+                        {errors.fromDate && <span className='error'>{errors.fromDate}</span>}
                     </div>
                     <div className="form-group">
                         <label htmlFor="toDate">TO DATE</label>
@@ -219,6 +332,7 @@ const TakalUserForm = () => {
                         value={toDate}
                         onChange={(e) => setToDate(e.target.value)}
                         />
+                        {errors.toDate && <span className='error'>{errors.toDate}</span>}
                     </div>
                     <div className="button-group">
                         <button onClick={handleClick}>NEXT</button>
@@ -226,7 +340,7 @@ const TakalUserForm = () => {
                     </form>
                 </div>
             </div>
-          </div>
+      
       );
 }
 

@@ -53,7 +53,7 @@ export default function CheckpostVerify() {
         <h1> Verification Page</h1>
         <div className="searchbox">
           <input type="search" placeholder="search Id Here" value={search} onChange={handleSearch} />
-          <button>Search</button>
+        
         </div>
         <table>
           <thead>

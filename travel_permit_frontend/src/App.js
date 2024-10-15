@@ -13,33 +13,48 @@ import './App.css'
 import UserHome from './UserHome';
 import PassedList from './PassedList';
 import TatkalPending from './TatkalPending';
+import Layout from './UserLayout';
+import Sb from './sb'
+import PaymentForm from './PaymentForm';
 
 function App() {
   const router = createBrowserRouter([
     {
+      path:"/tuto",
+      element:<Sb/>
+    },
+    {
+      path:'/payment',
+      element:<PaymentForm/>
+    }
+   ,
+    {
       path:"/",
-      element:<LandingPage/>
-    },
-    {
-      path:"/user_login",
       element:<UserLogin/>
-    },
-    {
-      path:"/user-home",
-      element:<UserHome/>
     },
     {
       path:"/user-register",
       element:<UserRegister/>
     },
     {
-      path:"/user-form",
+      element:<Layout/>,
+      children:[
+    
+    {
+      path:"/user-home/:email",
+      element:<UserHome/>
+    },
+  
+    {
+      path:"/user-form/:email",
       element:<UserFrom/>
     },
     {
-      path:"/takal-form",
+      path:"/takal-form/:email",
       element:<TakalUserForm/>
     },
+  ]
+  },
     {
       path:"/admin-approve",
       element:<AdminApprove/>

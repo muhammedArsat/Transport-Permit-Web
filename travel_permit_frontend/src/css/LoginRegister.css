@@ -7,6 +7,9 @@
   padding: 20px;
   position: relative;
 }
+.body{
+  background-color: black;
+}
 
 .header img {
   position: absolute;
@@ -37,6 +40,7 @@
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  margin-top: 20px;
   align-items: center;
   box-shadow: 0 0 10px 0 rgba(139, 141, 255, 0.9);
   width: 700px;
@@ -46,6 +50,7 @@
   overflow: hidden;  
   
   margin-top: 100px;
+  
 }
 .box {
   display: flex;
@@ -56,6 +61,8 @@
   padding: 20px;
   text-align: center;
 }
+
+
 
 .box img {
   width: 200px;
@@ -98,8 +105,10 @@ button:hover {
 .pinkBox {
   font-family: 'Poppins', sans-serif;
   color: white;
+
   background: linear-gradient(to right,hsl(240, 17%, 30%),hsl(240, 36%, 23%),hsl(240, 32%, 17%), hsl(240, 94%,6%));
-  
+
+  padding: 20px;
 }
 .pinkBox h1 {
   display: none;
