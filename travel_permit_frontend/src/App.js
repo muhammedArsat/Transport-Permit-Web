@@ -11,9 +11,9 @@ import CheckHome from './CheckHome';
 import CheckVerify from './CheckpostVerify';
 import './App.css'
 import UserHome from './UserHome';
-import UserDashboard from './UserDashboard';
 import PassedList from './PassedList';
 import TatkalPending from './TatkalPending';
+import Dashboard from './Dashboard';
 
 function App() {
   const router = createBrowserRouter([
@@ -51,7 +51,7 @@ function App() {
     },
     {
       path:"/user-dashboard",
-      element:<UserDashboard/>
+      element:<Dashboard/>
     },
     {
       path:"/approved-list",

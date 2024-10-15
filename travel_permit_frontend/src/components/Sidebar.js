@@ -24,7 +24,6 @@ const Sidebar = () => {
         takkal(false)
       }
     }
-
     checkTime();
     const interval = setInterval(checkTime,60000);
 
@@ -37,7 +36,7 @@ navigate("/")
 
 }
   return (
-    <div className="sidebar">
+    <div className={"sidebar"} >
       <h3>Transport Permit</h3>
       <hr></hr>
       <ul>

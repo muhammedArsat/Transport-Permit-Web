@@ -29,13 +29,14 @@ public interface Service {
 
     UserForm passedVehicle(Integer id);
 
-<<<<<<< HEAD
-    List<>
-=======
     List<UserForm> getPassedList();
 
     List<TakalUser> getPendingTakkalUser();
 
     TakalUser takkalApproved(Integer id);
->>>>>>> 7bdeab616eee6015a90b1ec7bc430d992c2dee92
+
+    long getApprovedCount();
+    long countApprovedUserFormsByEmail(String email);
+
+    List<UserForm> getAppliedPermitsByEmail(String email);
 }
