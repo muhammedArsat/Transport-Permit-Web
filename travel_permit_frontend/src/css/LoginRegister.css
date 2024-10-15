@@ -18,31 +18,17 @@
 
 .header h1 {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom, rgb(246, 96, 121), rgb(246, 0, 123), #816694);
+  background: linear-gradient(to bottom,hsl(240, 62%, 66%), hsl(240, 94%,6%), #9321e5);
   -webkit-background-clip: text;
   color: transparent;
   margin: 0 auto;
 }
 
-.header a {
-  background: linear-gradient(to bottom, rgb(246, 96, 121), rgb(246, 0, 123), #816694);
-  -webkit-background-clip: icon;
-  color: white;
-  height: 40px;
-  width: 45px;
-  border-radius: 50%;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  position: relative;
-}
 
 .line {
   width: 100vw; /* Ensure it takes the full viewport width */
   height: 10px;
-  background: linear-gradient(to right, rgb(246, 96, 121), rgba(171, 46, 255, 0.679), #816694);
+  background: linear-gradient(to right,hsl(240, 51%, 73%),hsl(240, 32%, 44%),hsl(240, 48%, 32%), hsl(240, 94%,6%));
   margin: 0; /* Remove any margin */
   padding: 0; /* Remove padding */
 }
@@ -52,12 +38,13 @@
   justify-content: center;
   margin: 0 auto;
   align-items: center;
-  box-shadow: 0 0 10px 0 rgba(254, 88, 149, 0.9);
+  box-shadow: 0 0 10px 0 rgba(139, 141, 255, 0.9);
   width: 700px;
   height: 400px;
-  background: linear-gradient(to right, #BB6D64 50%, white 50%);
+  background: linear-gradient(to right,hsl(240, 17%, 30%),hsl(240, 33%, 22%),hsl(240, 32%, 17%), hsl(240, 94%,6%) 50%, white 50%);
   border-radius: 10px;
   overflow: hidden;  
+  
   margin-top: 100px;
 }
 .box {
@@ -68,18 +55,6 @@
   width: 50%;
   padding: 20px;
   text-align: center;
-}
-.logins{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 0 10px 0 rgba(254, 88, 149, 0.9);
-  width: 700px;
-  height: 400px;
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;  
-  margin-top: 100px;
 }
 
 .box img {
@@ -104,7 +79,7 @@ button {
   margin: 10px 0;
   border: none;
   border-radius: 5px;
-  background-color: #816694; 
+  background-color: hsl(240, 38%, 28%); 
   color: white;
   font-size: 16px;
   cursor: pointer; 
@@ -116,14 +91,15 @@ button:hover {
   background: white;
 }
 .whiteBox h1 {
-  background: linear-gradient(to bottom, rgb(246, 96, 121), rgb(255, 67, 161), #816694);
+  background: linear-gradient(to bottom,hsl(240, 62%, 66%), hsl(240, 94%,6%), #9321e5);
   -webkit-background-clip: text;
   color: transparent;
 }
 .pinkBox {
   font-family: 'Poppins', sans-serif;
   color: white;
-  background: #BB6D64;
+  background: linear-gradient(to right,hsl(240, 17%, 30%),hsl(240, 36%, 23%),hsl(240, 32%, 17%), hsl(240, 94%,6%));
+  
 }
 .pinkBox h1 {
   display: none;
@@ -134,16 +110,19 @@ button:hover {
   font-weight: 600;
 }
 .pinkBox button{
-  color: rgb(230, 116, 1);
+  color: rgb(0, 50, 58);
   border-radius: 10px;
   height: 40px;
   width: 200px;
+  cursor: pointer;
   background-color: white;
   text-decoration: none;
 }
 .media_register {
   display: none;
 }
+
+
 @media (max-width: 768px) {
   .header h1 {
     font-family: 'Poppins';
@@ -171,25 +150,27 @@ button:hover {
     height: auto;
     flex-direction: column;
     box-shadow: none;
-    background: none; }
+    background: white; }
   .pinkBox {
     width: 100%;
     height: 100px;
     background-color: white;
     font-size: 14px; 
+    display: none;
   }
+  
   .registerText {
     display: none;
   }
  
   .whiteBox h1 {
-    display: none;
+    display: block;
   }
   .pinkBox h1 {
     display: block;
     margin-top: 50px;
     font-family: 'Poppins';
-    background: linear-gradient(to bottom, rgb(246, 96, 121), rgba(230, 1, 131, 0.799), #816694);
+    /* background: linear-gradient(to bottom,hsl(240, 62%, 66%), hsl(240, 94%,6%), #9321e5);  */
     -webkit-background-clip: text;
     color: transparent;
     font-size: 36px;
@@ -224,5 +205,49 @@ button:hover {
   }
   .whiteBox a{
     margin-left:200px;
+  }
+}
+@media (max-width: 576px) {
+  .header h1 {
+    font-size: 16px;
+    padding-right: 100px;
+  }
+
+  .header img {
+    width: 20px;
+    height: 20px;
+  }
+  .line{
+    width: 100%;
+  }
+  input, button {
+    width: 90%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .page {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 375px) {
+  .header h1 {
+    font-size: 14px;
+    padding-right: 60px;
+  }
+  .line{
+    width: 100%;
+  }
+  input, button {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .page {
+    margin-top: 10px;
+    padding: 10px;
   }
 }

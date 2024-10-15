@@ -12,7 +12,7 @@
   text-align: center;
   margin-bottom: 20px;
   font-size: 1.5rem;
-  background: linear-gradient(to bottom, rgb(246, 96, 121), rgba(230, 1, 131, 0.799), #816694);
+  background: linear-gradient(to bottom,hsl(240, 62%, 66%), hsl(240, 94%,6%), #9321e5);
   -webkit-background-clip: text;
   color: transparent;
 }
