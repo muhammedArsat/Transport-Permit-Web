@@ -1,56 +1,59 @@
-
-import React from "react";
+import React, { useState, useEffect } from "react";
 import '../css/Sidebar.css';
-import { useState,useEffect } from "react";
-import { useNavigate ,Link, useParams} from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
+const Sidebar = (isOpen) => {
+  const { email } = useParams();
+  const [isTakkal, setTakkal] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false); // State to toggle sidebar
 
-const Sidebar = () => {
-
-  const {email} = useParams();
-
-  const[istakkal,takkal]=useState(false);
-
-  useEffect(()=>{
-    const checkTime =()=>{
+  useEffect(() => {
+    const checkTime = () => {
       const currentDate = new Date();
       const currentHour = currentDate.getHours();
 
-      if(currentHour >= 15 && currentHour <19)
-      {
-        takkal(true)
+      if (currentHour >= 1 && currentHour < 24) {
+        setTakkal(true);
+      } else {
+        setTakkal(false);
       }
-      else{
-        takkal(false)
-      }
-    }
+    };
+
     checkTime();
-    const interval = setInterval(checkTime,60000);
+    const interval = setInterval(checkTime, 60000);
 
-    return ()=>clearInterval(interval);
-  },[]);
+    return () => clearInterval(interval);
+  }, []);
 
-const navigate = useNavigate();
-const handleLogout= () =>{
-navigate("/")
+  const handleLogout = () => {
+    localStorage.removeItem("accesToken");
+    window.location.href = "/";
+  };
 
-}
+  // Toggle sidebar open/close
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
   return (
-    <div className={"sidebar"} >
+    <>
+      {/* Hamburger button */}
+      <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
       <h3>Transport Permit</h3>
-      <hr></hr>
+      <hr />
       <ul>
-      <Link to={`/user-home/${email}`}> <li>Home</li></Link>
+        <Link to={`/user-home/${email}`}><li>Home</li></Link>
         <Link to={`/user-form/${email}`}><li>Normal Form</li></Link>
-        {istakkal ?(
-        <Link to={`/takal-form/${email}`}><li>Takkaal Form</li></Link>
-        ):(<li style={{color:"gray"}}>Takkal Form(only open between 11 am to 12 pm)</li>)
-
-        }
-      <Link to={`/user-dashboard/${email}`}><li>Dashboard</li></Link>
+        {isTakkal ? (
+  <Link to={`/takal-form/${email}`}><li>Takkaal Form</li></Link>
+) : (
+  <li style={{ color: "gray" }}>Takkal Form (only open between 11 am to 12 pm)</li>
+)}
+        <Link to={`/user-dashboard/${email}`}><li>Dashboard</li></Link>
         <li onClick={handleLogout}>Logout</li>
       </ul>
     </div>
+    </>
   );
 };
 

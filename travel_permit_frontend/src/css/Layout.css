@@ -1,0 +1,87 @@
+/* Layout styling */
+.layout {
+    display: flex;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 100px;
+    background-color: hsl(240, 94%, 6%);
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar.closed {
+    transform: translateX(-100%); /* Hide sidebar in small screens */
+  }
+  
+  .sidebar.open {
+    transform: translateX(0); /* Show sidebar when menu is open */
+  }
+  
+  /* Content section styling */
+  .content {
+    margin-left: 250px;
+    padding: 20px;
+    width: 100%;
+  }
+  
+  /* Hamburger menu styling (hidden by default) */
+  .hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000; /* Make sure it's above the rest of the UI */
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 768px) {
+    /* Flex direction column for small and medium screens */
+    .layout {
+      flex-direction: column;
+    }
+  
+    /* Adjust content section when sidebar is hidden */
+    .content {
+      margin-left: 0;
+    }
+  
+    /* Show the hamburger menu */
+    .hamburger {
+      display: block;
+    }
+  
+    /* Hide sidebar by default in small screens */
+    .sidebar {
+      transform: translateX(-100%);
+    }
+  
+    /* When sidebar is open */
+    .layout.sidebar-open .sidebar {
+      transform: translateX(0);
+    }
+  }
+  
+  @media (min-width: 769px) {
+    /* Keep the layout horizontal and sidebar always visible on larger screens */
+    .sidebar {
+      transform: translateX(0);
+    }
+  
+    .hamburger {
+      display: none; /* No hamburger icon on larger screens */
+    }
+  
+    .content {
+      margin-left: 250px;
+    }
+  }
+  
