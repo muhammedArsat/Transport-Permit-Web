@@ -216,47 +216,5 @@ button:hover {
     margin-left:200px;
   }
 }
-@media (max-width: 576px) {
-  .header h1 {
-    font-size: 16px;
-    padding-right: 100px;
-  }
 
-  .header img {
-    width: 20px;
-    height: 20px;
-  }
-  .line{
-    width: 100%;
-  }
-  input, button {
-    width: 90%;
-    padding: 10px;
-    font-size: 14px;
-  }
 
-  .page {
-    margin-top: 20px;
-    width: 100%;
-    height: auto;
-  }
-}
-
-@media (max-width: 375px) {
-  .header h1 {
-    font-size: 14px;
-    padding-right: 60px;
-  }
-  .line{
-    width: 100%;
-  }
-  input, button {
-    width: 100%;
-    padding: 8px;
-  }
-
-  .page {
-    margin-top: 10px;
-    padding: 10px;
-  }
-}
