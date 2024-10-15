@@ -18,7 +18,7 @@ const Layout = () => {
       <Sidebar isOpen={sidebarOpen} />
 
       {/* Content section that renders based on the current route */}
-      <div style={{ marginLeft: sidebarOpen ? 'px' : '0px', padding: '5px', width: '100%' }}>
+      <div style={{ marginLeft: sidebarOpen ? '0px' : '0px', padding: '5px', width: '100%' }}>
         <Outlet />  {/* Renders the page content based on the current route */}
       </div>
     </div>
