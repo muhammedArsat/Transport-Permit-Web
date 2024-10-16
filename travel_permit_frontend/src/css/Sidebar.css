@@ -1,6 +1,102 @@
 /* Sidebar styling */
 .sidebar {
   width: 250px;
+  background: linear-gradient(to bottom, rgb(246, 96, 121), rgb(255, 67, 161), #816694);
+  color: white;
+  padding: 20px;
+  height: 100vh;
+  position: fixed; /* Keeps the sidebar fixed */
+  top: 0;
+  left: 0;
+  z-index: 10; /* Ensures it's above the main content */
+  transition: transform 0.3s ease; /* Smooth transition for sliding in/out */
+  transform: translateX(0); /* Sidebar is visible initially */
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/* Sidebar header */
+.sidebar h3 {
+  color: white;
+  font-size: x-large;
+  margin-bottom: 15%; /* Increased margin for better spacing */
+}
+
+/* Divider line */
+.sidebar hr {
+  border: none;
+  border-top: 2px solid rgba(255, 255, 255, 0.7); /* Thinner line */
+  margin: 10px 0;
+}
+
+/* Sidebar list */
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 10%;
+  font-size: 20px; /* Adjusted font size for clarity */
+  font-weight: bold;
+}
+
+/* List items */
+.sidebar ul li {
+  margin-bottom: 15px; /* Decreased margin for tighter spacing */
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px; /* Added border-radius for a smoother look */
+}
+
+/* Hover effect for list items */
+.sidebar ul li:hover {
+  background-color: #6c4588; /* Consistent hover color */
+  box-shadow: 0px 4px 8px rgba(108, 69, 136, 0.5);
+}
+
+/* Main content styling */
+.main {
+  margin-left: 250px;
+  padding: 20px;
+  background-color: #f0f0f0; /* Light gray background for contrast */
+  min-height: 100vh;
+  transition: margin-left 0.3s ease; /* Smooth transition for width changes */
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%); /* Hide sidebar by sliding it off-screen */
+  }
+
+  .sidebar.open {
+    transform: translateX(0); /* Slide sidebar back in when opened */
+  }
+
+  .main {
+    margin-left: 0; /* Make main content take up the full width on mobile */
+  }
+}
+
+/* Mobile toggle button */
+.mobile-menu {
+  display: none; /* Initially hidden */
+}
+
+/* Show toggle button on mobile */
+@media (max-width: 768px) {
+  .mobile-menu {
+    display: block;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 15;
+    background-color: #816694;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+
   background-color: hsl(240, 94%, 6%);
   color: white;
   padding: 20px;
@@ -83,4 +179,5 @@ a {
   .hamburger {
     display: none; /* Hide hamburger icon */
   }
+}
 }
