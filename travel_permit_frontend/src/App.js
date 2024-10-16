@@ -19,7 +19,7 @@ import PaymentForm from './PaymentForm';
 import UserDashboard from './UserDashboard.js';
 import MyPermits from './MyPermits.js';
 
-import AdminLayout from './AdminLayout'
+import AdminLayout from './AdminLayout';
 import VerifierLayout from './VerifierLayout';
 
 function App() {
@@ -66,19 +66,6 @@ function App() {
     },
   ]
   },
-    {
-      path:"/admin-approve",
-      element:<AdminApprove/>
-    },
-    {
-      path:"/admin-landingpage",
-      element:<AdminLandingPage/>
-    },
-
-    {
-      path:"/approved-list",
-      element:<ApprovedList/>
-    },
   {
     element:<AdminLayout/>,
     children:[
