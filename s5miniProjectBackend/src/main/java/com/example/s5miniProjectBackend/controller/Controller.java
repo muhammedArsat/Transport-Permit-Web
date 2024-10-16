@@ -47,13 +47,17 @@ User login code
         String password = loginRequest.getPassword();
 
         // Query the register table
-        UserRegister user = userRegisterRepository.findByEmailAndPassword(email, password);
+        UserRegister user = userRegisterRepository.findByEmail(email);
         if (user != null) {
 
             if (user.getEmail().equalsIgnoreCase(email) && user.getPassword().equalsIgnoreCase(password)) {
                 // Login successful
                 return new UserLoginResponse(true, "Login successful");
-            } else {
+            }
+            else if(user.getEmail().equalsIgnoreCase(email) && !user.getPassword().equalsIgnoreCase(password)) {
+                    return new UserLoginResponse(false,"Incorrect password");
+            }
+            else {
 
                 return new UserLoginResponse(false, "Incorrect email and password");
             }

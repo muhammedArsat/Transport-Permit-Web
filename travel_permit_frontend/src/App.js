@@ -1,4 +1,5 @@
 import {RouterProvider,createBrowserRouter} from 'react-router-dom';
+import LandingPage from './LandingPage';
 import UserLogin from "./UserLogin"
 import UserRegister from "./UserRegister";
 import UserFrom from "./UserForm";
@@ -12,29 +13,52 @@ import './App.css'
 import UserHome from './UserHome';
 import PassedList from './PassedList';
 import TatkalPending from './TatkalPending';
+import Layout from './UserLayout';
+import Sb from './sb'
+import PaymentForm from './PaymentForm';
 
 function App() {
   const router = createBrowserRouter([
     {
-      path:"/",
-      element:<UserLogin/>
+      path:"/tuto",
+      element:<Sb/>
     },
     {
-      path:"/user-home",
-      element:<UserHome/>
+      path:'/payment',
+      element:<PaymentForm/>
+    }
+   ,
+    {
+      path:"/",
+      element:<UserLogin/>
     },
     {
       path:"/user-register",
       element:<UserRegister/>
     },
     {
+<<<<<<< HEAD
       path:"/user-form/:{email}",
+=======
+      element:<Layout/>,
+      children:[
+    
+    {
+      path:"/user-home/:email",
+      element:<UserHome/>
+    },
+  
+    {
+      path:"/user-form/:email",
+>>>>>>> fb2707d21a481f358c0cbc3453d71cef365abcc5
       element:<UserFrom/>
     },
     {
-      path:"/takal-form",
+      path:"/takal-form/:email",
       element:<TakalUserForm/>
     },
+  ]
+  },
     {
       path:"/admin-approve",
       element:<AdminApprove/>

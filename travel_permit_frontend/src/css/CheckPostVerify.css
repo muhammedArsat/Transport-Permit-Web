@@ -9,10 +9,11 @@
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
+    width: 100%;
   }
   .searchbox button{
     width: 75px;
   }
   .searchbox input{
-    width: 60%;
+    width: 80%;
   }

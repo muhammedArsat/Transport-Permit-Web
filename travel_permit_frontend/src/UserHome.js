@@ -1,10 +1,10 @@
 import React from 'react'
-import Sidebar from './components/Sidebar'
+import './css/UserHome.css'
 
 export default function UserHome() {
   return (
     <div>
-        <Sidebar/>
+   
         <div className="info" >
         What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing
         and typesetting industry. Lorem Ipsum has been the industry's standard

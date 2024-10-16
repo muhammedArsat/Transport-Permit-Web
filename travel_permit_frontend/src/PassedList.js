@@ -22,6 +22,7 @@ export default function PassedList() {
     <div>
       <AdminSidebar />
       <div style={{ marginLeft: "270px" , marginRight:"20px"}}>
+        <div style={{textAlign:"center"}}><h1>Passed List</h1></div>
         <table>
           <thead>
 

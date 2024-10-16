@@ -20,11 +20,19 @@ public class UserForm {
     private String toDate;
     private String vehicleMode;
     private String amount;
+    private String email;
 
+    public String getEmail() {
+        return email;
+    }
 
-	// Getters and setters
+    public void setEmail(String email) {
+        this.email = email;
+    }
+// Getters and setters
 
 private String status = "pending";
+
     // Getters and setters
 
     public String getVehicleMode() {
