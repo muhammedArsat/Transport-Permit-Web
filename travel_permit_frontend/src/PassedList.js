@@ -20,8 +20,8 @@ export default function PassedList() {
   }, []);
   return (
     <div>
-      <AdminSidebar />
-      <div style={{ marginLeft: "270px" , marginRight:"20px"}}>
+     
+      <div>
         <div style={{textAlign:"center"}}><h1>Passed List</h1></div>
         <table>
           <thead>

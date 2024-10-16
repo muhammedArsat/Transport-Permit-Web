@@ -39,9 +39,9 @@ export default function TatkalPending() {
 
 
   return (
-    <div style={{display:"flex"}}>
+    <div>
     
-      <Sidebar/>
+  
 
       <div className="approval-wrap">
         <div className="title"><h1>Tatkkal Pending Lists</h1></div>

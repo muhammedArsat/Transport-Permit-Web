@@ -1,21 +1,31 @@
+.approved-list-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.table-wrapper {
+  min-width: 100%;
+}
+
 table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 45px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+  .approved-list-container {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
   }
-  
-  td, th {
-    border: 1px solid black;
-    text-align: left;
-    padding: 8px;
+
+  .table-wrapper {
+    min-width: 1000px; /* Adjust this value based on your table's content */
   }
-  
-  tr:nth-child(even) {
-    background-color: #dddddd;
-    border: 1px solid black;
-  }
-  .table
-  {
-    margin-left: 220px;
-  }
+}
