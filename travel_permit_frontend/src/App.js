@@ -1,5 +1,5 @@
 import {RouterProvider,createBrowserRouter} from 'react-router-dom';
-import LandingPage from './LandingPage';
+
 import UserLogin from "./UserLogin"
 import UserRegister from "./UserRegister";
 import UserFrom from "./UserForm";
@@ -14,18 +14,18 @@ import UserHome from './UserHome';
 import PassedList from './PassedList';
 import TatkalPending from './TatkalPending';
 import Layout from './UserLayout';
-import Sb from './sb'
+
 import PaymentForm from './PaymentForm';
 import UserDashboard from './UserDashboard.js';
 import MyPermits from './MyPermits.js';
 
 import AdminLayout from './AdminLayout'
+import AdminLayout from './AdminLayout';
+import VerifierLayout from './VerifierLayout';
+
 function App() {
   const router = createBrowserRouter([
-    {
-      path:"/tuto",
-      element:<Sb/>
-    },
+
     {
       path:'/payment',
       element:<PaymentForm/>
@@ -95,17 +95,20 @@ function App() {
       {
         path:"/takkal-pending",
         element:<TatkalPending/>
-      }
+      },
+      {
+        path:"/approved-list",
+        element:<ApprovedList/>
+      },
+      {
+        path:"/passed-list",
+        element:<PassedList/>
+      },
     ]
   },
-  {
-    path:"/approved-list",
-    element:<ApprovedList/>
-  },
-  {
-    path:"/passed-list",
-    element:<PassedList/>
-  },
+ {
+  element:<VerifierLayout/>,
+  children:[
     {
       path:"/check-home",
       element:<CheckHome/>
@@ -114,6 +117,9 @@ function App() {
       path:"/check-verify",
       element:<CheckVerify/>
     },
+  ]
+ }
+   
   
   ])
   return (
