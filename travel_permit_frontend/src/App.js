@@ -1,5 +1,5 @@
 import {RouterProvider,createBrowserRouter} from 'react-router-dom';
-import LandingPage from './LandingPage';
+
 import UserLogin from "./UserLogin"
 import UserRegister from "./UserRegister";
 import UserFrom from "./UserForm";
@@ -14,17 +14,14 @@ import UserHome from './UserHome';
 import PassedList from './PassedList';
 import TatkalPending from './TatkalPending';
 import Layout from './UserLayout';
-import Sb from './sb'
+
 import PaymentForm from './PaymentForm';
 import AdminLayout from './AdminLayout';
 import VerifierLayout from './VerifierLayout';
-import Tabletuto from './tabletuto';
+
 function App() {
   const router = createBrowserRouter([
-    {
-      path:"/tuto",
-      element:<Tabletuto/>
-    },
+
     {
       path:'/payment',
       element:<PaymentForm/>
