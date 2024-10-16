@@ -34,7 +34,6 @@ export default function Sb() {
 
   const handleLogout = () => {
     localStorage.removeItem("accesToken");
-    localStorage.removeItem("Email");
     window.location.href = "/";
   };
 
