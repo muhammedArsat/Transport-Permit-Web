@@ -2,13 +2,14 @@
 import React, { useEffect, useState } from "react";
 import Sb from "./sb";
 import './css/MyPermit.css';
+import { useParams } from "react-router-dom";
 
 const MyPermits = () => {
   const [permitData, setPermitData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const {email} = useParams();
 
   useEffect(() => {
-    const email = localStorage.getItem("Email");
 
     if (email) {
       fetch(`http://localhost:8080/transportpermit/applied-permits?email=${email}`)
