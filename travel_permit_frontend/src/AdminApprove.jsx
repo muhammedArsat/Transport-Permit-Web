@@ -54,9 +54,7 @@ export default function Approval() {
   
 
   return (
-    <div style={{display:"flex"}}>
-    
-      <Sidebar/>
+    <div >
 
       <div className="approval-wrap">
         <div className="title"><h1>Pending Lists</h1></div>

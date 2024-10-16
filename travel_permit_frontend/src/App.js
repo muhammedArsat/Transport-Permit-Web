@@ -16,7 +16,7 @@ import TatkalPending from './TatkalPending';
 import Layout from './UserLayout';
 import Sb from './sb'
 import PaymentForm from './PaymentForm';
-
+import AdminLayout from './AdminLayout'
 function App() {
   const router = createBrowserRouter([
     {
@@ -55,18 +55,32 @@ function App() {
     },
   ]
   },
-    {
-      path:"/admin-approve",
-      element:<AdminApprove/>
-    },
-    {
-      path:"/admin-landingpage",
-      element:<AdminLandingPage/>
-    },
-    {
-      path:"/approved-list",
-      element:<ApprovedList/>
-    },
+  {
+    element:<AdminLayout/>,
+    children:[
+      {
+        path:"/admin-approve",
+        element:<AdminApprove/>
+      },
+      {
+        path:"/admin-landingpage",
+        element:<AdminLandingPage/>
+      },
+     
+      {
+        path:"/takkal-pending",
+        element:<TatkalPending/>
+      }
+    ]
+  },
+  {
+    path:"/approved-list",
+    element:<ApprovedList/>
+  },
+  {
+    path:"/passed-list",
+    element:<PassedList/>
+  },
     {
       path:"/check-home",
       element:<CheckHome/>
@@ -75,14 +89,7 @@ function App() {
       path:"/check-verify",
       element:<CheckVerify/>
     },
-    {
-      path:"/passed-list",
-      element:<PassedList/>
-    },
-    {
-      path:"/takkal-pending",
-      element:<TatkalPending/>
-    }
+  
   ])
   return (
    <div>
