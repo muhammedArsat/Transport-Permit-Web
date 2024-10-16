@@ -9,14 +9,17 @@ import AdminLandingPage from './AdminHomePage';
 import ApprovedList from './ApprovedList';
 import CheckHome from './CheckHome';
 import CheckVerify from './CheckpostVerify';
-import './App.css'
+import './App.css' 
 import UserHome from './UserHome';
 import PassedList from './PassedList';
 import TatkalPending from './TatkalPending';
 import Layout from './UserLayout';
 
 import PaymentForm from './PaymentForm';
-import AdminLayout from './AdminLayout';
+import UserDashboard from './UserDashboard.js';
+import MyPermits from './MyPermits.js';
+
+import AdminLayout from './AdminLayout'
 import VerifierLayout from './VerifierLayout';
 
 function App() {
@@ -53,8 +56,29 @@ function App() {
       path:"/takal-form/:email",
       element:<TakalUserForm/>
     },
+    {
+      path:"/user-dashboard/:email",
+      element:<UserDashboard/>
+    },
+    {
+      path:"my-permits/:email",
+      element:<MyPermits/>
+    },
   ]
   },
+    {
+      path:"/admin-approve",
+      element:<AdminApprove/>
+    },
+    {
+      path:"/admin-landingpage",
+      element:<AdminLandingPage/>
+    },
+
+    {
+      path:"/approved-list",
+      element:<ApprovedList/>
+    },
   {
     element:<AdminLayout/>,
     children:[

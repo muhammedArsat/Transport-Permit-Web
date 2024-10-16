@@ -34,4 +34,11 @@ public interface Service {
     List<TakalUser> getPendingTakkalUser();
 
     TakalUser takkalApproved(Integer id);
+
+    long getApprovedCount();
+    long countApprovedUserFormsByEmail(String email);
+
+    long countPendingByEmail(String email);
+
+    List<UserForm> getAppliedPermitsByEmail(String email);
 }

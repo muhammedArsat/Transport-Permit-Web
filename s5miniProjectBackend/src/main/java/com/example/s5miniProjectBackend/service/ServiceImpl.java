@@ -121,5 +121,27 @@ public class ServiceImpl implements Service{
 
     }
 
+    @Override
+    public long getApprovedCount() {
+        return userFormRepository.countByStatus("Approved");
+    }
+
+    @Override
+    public long countApprovedUserFormsByEmail(String email) {
+        return userFormRepository.countApprovedByEmail(email);
+    }
+
+    @Override
+    public long countPendingByEmail(String email) {
+        return userFormRepository.countPendingByEmail(email);
+    }
+
+    @Override
+    public List<UserForm> getAppliedPermitsByEmail(String email) {
+        return userFormRepository.findAppliedPermitsByEmail(email);
+    }
+
+
+
 
 }
