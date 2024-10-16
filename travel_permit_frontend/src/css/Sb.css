@@ -3,7 +3,13 @@ body{
     padding: 0;
 }
 .sb{
-    background-color: hsl(240, 38%, 28%); 
+    background: linear-gradient(
+        to right,
+        hsl(240, 17%, 30%),
+        hsl(240, 36%, 23%),
+        hsl(240, 32%, 17%),
+        hsl(240, 94%, 6%)
+      );
     position: fixed;
     top: 0;
     left: 0;
@@ -15,6 +21,7 @@ body{
     transition: transform 1s ease-in;
     width: 200px;
     z-index: 2;
+    font-family: 'poppins';
   
 }
 .sb.open{
@@ -31,12 +38,25 @@ body{
 }
 
 .sb li:hover{
- background-color: hsl(240, 38%, 28%); 
+ background:linear-gradient(
+    to right,
+    hsl(240, 17%, 30%),
+    hsl(240, 36%, 23%),
+    hsl(240, 32%, 17%),
+    hsl(240, 94%, 6%)
+  );
+
  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
  border-radius: 10px;
 }
 .sb-mob {
-    background-color: blue;
+    background: linear-gradient(
+        to right,
+        hsl(240, 17%, 30%),
+        hsl(240, 36%, 23%),
+        hsl(240, 32%, 17%),
+        hsl(240, 94%, 6%)
+      );
     width: 100vw;
     align-items: center; /* Ensures vertical alignment in row */
     padding: 15px;
@@ -47,7 +67,10 @@ body{
 
     margin-bottom: 10px;
 }
-
+.sb a{
+    text-decoration: none;
+    color:white;
+}
 
 @media(max-width:768px)
 {

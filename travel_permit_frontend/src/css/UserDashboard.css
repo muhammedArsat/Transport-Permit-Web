@@ -3,7 +3,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+
   }
   
   .dashboard-container {
@@ -14,7 +14,7 @@ body {
   .dashboard {
     margin-left: 230px;
     padding: 40px; /* Increased padding for a spacious look */
-    background-color: #f0f0f0;
+
     min-height: 100vh; /* Ensure it covers the full height */
     margin-left: 250px; /* Account for sidebar width */
   }
