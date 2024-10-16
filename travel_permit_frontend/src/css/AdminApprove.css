@@ -4,18 +4,7 @@
   box-sizing: border-box;
 }
 
-html,
-body,
-#root,
-.App {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  align-items: center;
-  overflow-x: hidden;
-}
+
 
 .approval-wrap {
   margin-left: 35px;
@@ -98,5 +87,9 @@ body,
   .small-container-approval {
     margin-bottom: 10px;
     margin-right: 0; /* Reset the margin for smaller screens */
+  }
+  .approval-wrap{
+    margin-left: 0;
+    padding: 10px;
   }
 }

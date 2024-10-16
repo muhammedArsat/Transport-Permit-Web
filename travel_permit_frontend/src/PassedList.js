@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import AdminSidebar from "./components/AdminSidebar";
 import "./css/Sidebar.css";
+import "./css/ApprovedList.css";
+
 export default function PassedList() {
   const [passed, setpassed] = useState([]);
   useEffect(() => {
@@ -19,15 +21,10 @@ export default function PassedList() {
     fetchData();
   }, []);
   return (
-    <div>
-     
-      <div>
-        <div style={{textAlign:"center"}}><h1>Passed List</h1></div>
-        <table>
-          <thead>
-
-         
-
+    <div className="approved-list-container" style={{overflowX:"auto"}}>
+    <div className="table-wrapper" >
+      <table style={{overflowX:"scroll"}}>
+        <thead>
           <tr>
             <th>Permit Id</th>
             <th>Name</th>
@@ -39,32 +36,30 @@ export default function PassedList() {
             <th>From Date</th>
             <th>To Date</th>
             <th>Vehicle Mode</th>
-            <th>Amount payed</th>
+            <th>Amount Paid</th>
             <th>Status</th>
           </tr>
-          </thead>
-          <tbody>
-            {passed.map((data) => (
-              <tr key={data.id}>
-                <td>{data.id}</td>
-                <td>{data.name}</td>
-                <td>{data.vehicleNo}</td>
-                <td>{data.licenseNo}</td>
-                <td>{data.no_of_days}</td>
-                <td>{data.fromPlace}</td>
-                <td>{data.toPlace}</td>
-                <td>{data.fromDate}</td>
-                <td>{data.toDate}</td>
-                <td>{data.vehicleMode}</td>
-                <td>{data.amount}</td>
-                <td>{data.status}</td>
-
-
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+        </thead>
+        <tbody>
+          {passed.map((show) => (
+            <tr key={show.id}>
+              <td>{show.id}</td>
+              <td>{show.name}</td>
+              <td>{show.vehicleNo}</td>
+              <td>{show.licenseNo}</td>
+              <td>{show.no_of_days}</td>
+              <td>{show.fromPlace}</td>
+              <td>{show.toPlace}</td>
+              <td>{show.fromDate}</td>
+              <td>{show.toDate}</td>
+              <td>{show.vehicleMode}</td>
+              <td>{show.amount}</td>
+              <td>{show.status}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
+  </div>
   );
 }

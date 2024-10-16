@@ -17,9 +17,9 @@ export default function ApprovedList() {
   }, []);
 
   return (
-    <div className="approved-list-container">
-      <div className="table-wrapper">
-        <table>
+    <div className="approved-list-container" style={{overflowX:"auto"}}>
+      <div className="table-wrapper" >
+        <table style={{overflowX:"scroll"}}>
           <thead>
             <tr>
               <th>Permit Id</th>
