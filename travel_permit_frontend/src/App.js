@@ -20,7 +20,6 @@ import UserDashboard from './UserDashboard.js';
 import MyPermits from './MyPermits.js';
 
 import AdminLayout from './AdminLayout'
-import AdminLayout from './AdminLayout';
 import VerifierLayout from './VerifierLayout';
 
 function App() {

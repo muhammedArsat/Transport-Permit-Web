@@ -60,16 +60,13 @@ body {
     padding: 15px;
     display: none;
     color: white;
-<<<<<<< HEAD
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000; /* Ensure it stays on top of the dashboard */
-=======
     transition: transform 1s ease; 
 
     margin-bottom: 10px;
->>>>>>> cdfa6e9b3d7d151390da6a6d0465bb2e9e0493d9
 }
 
 /* Responsive Styles */
