@@ -38,5 +38,7 @@ public interface Service {
     long getApprovedCount();
     long countApprovedUserFormsByEmail(String email);
 
+    long countPendingByEmail(String email);
+
     List<UserForm> getAppliedPermitsByEmail(String email);
 }

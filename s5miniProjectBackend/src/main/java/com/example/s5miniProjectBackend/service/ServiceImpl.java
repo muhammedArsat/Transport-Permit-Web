@@ -132,6 +132,11 @@ public class ServiceImpl implements Service{
     }
 
     @Override
+    public long countPendingByEmail(String email) {
+        return userFormRepository.countPendingByEmail(email);
+    }
+
+    @Override
     public List<UserForm> getAppliedPermitsByEmail(String email) {
         return userFormRepository.findAppliedPermitsByEmail(email);
     }

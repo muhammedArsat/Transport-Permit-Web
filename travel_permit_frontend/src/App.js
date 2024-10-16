@@ -9,13 +9,15 @@ import AdminLandingPage from './AdminHomePage';
 import ApprovedList from './ApprovedList';
 import CheckHome from './CheckHome';
 import CheckVerify from './CheckpostVerify';
-import './App.css'
+import './App.css' 
 import UserHome from './UserHome';
 import PassedList from './PassedList';
 import TatkalPending from './TatkalPending';
 import Layout from './UserLayout';
 import Sb from './sb'
 import PaymentForm from './PaymentForm';
+import UserDashboard from './UserDashboard.js';
+import MyPermits from './MyPermits.js';
 
 function App() {
   const router = createBrowserRouter([
@@ -53,6 +55,14 @@ function App() {
       path:"/takal-form/:email",
       element:<TakalUserForm/>
     },
+    {
+      path:"/user-dashboard/:email",
+      element:<UserDashboard/>
+    },
+    {
+      path:"my-permits/:email",
+      element:<MyPermits/>
+    },
   ]
   },
     {
@@ -63,10 +73,7 @@ function App() {
       path:"/admin-landingpage",
       element:<AdminLandingPage/>
     },
-    {
-      path:"/user-dashboard",
-      element:<Dashboard/>
-    },
+
     {
       path:"/approved-list",
       element:<ApprovedList/>

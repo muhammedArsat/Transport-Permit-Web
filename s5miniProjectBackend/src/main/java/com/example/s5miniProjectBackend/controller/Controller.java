@@ -199,6 +199,11 @@ Takkal API's
         long count = service.countApprovedUserFormsByEmail(email);
         return ResponseEntity.ok(count);
     }
+    @GetMapping("/pendingCount/{email}")
+    public ResponseEntity<Long> getPendingCount(@PathVariable String email) {
+        long count = service.countPendingByEmail(email);
+        return ResponseEntity.ok(count);
+    }
     @GetMapping("/applied-permits")
     public ResponseEntity<List<UserForm>> getAppliedPermits(@RequestParam String email) {
         List<UserForm> appliedPermits = service.getAppliedPermitsByEmail(email);
