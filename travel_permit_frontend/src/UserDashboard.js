@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom"; // Import Link for navigation
-import Sb from "./sb"; // Importing the Sidebar component
+ // Importing the Sidebar component
 import './css/UserDashboard.css'; // Create a separate CSS file for dashboard styling
 
 const UserDashboard = () => {
@@ -36,11 +36,11 @@ const UserDashboard = () => {
     } else {
       alert("User is not logged in");
     }
-  }, []);
+  }, [email]);
 
   return (
     <div className="dashboard-container">
-      <Sb /> {/* Sidebar Component */}
+
       <div className="dashboard">
         <h2>Dashboard</h2>
         <div className="counts-container">

@@ -11,6 +11,7 @@
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-family: 'poppins';
 }
 
 .form-head {
@@ -57,7 +58,13 @@ select {
 
 .button-group button {
   padding: 12px;
-  background-color: #816694;
+  background: linear-gradient(
+    to right,
+    hsl(240, 17%, 30%),
+    hsl(240, 36%, 23%),
+    hsl(240, 32%, 17%),
+    hsl(240, 94%, 6%)
+  );
   color: white;
   border: none;
   border-radius: 5px;
