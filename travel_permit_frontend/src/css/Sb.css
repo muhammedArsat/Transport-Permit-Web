@@ -4,7 +4,7 @@ body{
 }
 .sb{
     background-color:navy;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
@@ -14,7 +14,7 @@ body{
     transform: translateX(0);
     transition: transform 1s ease-in;
     width: 200px;
-
+    z-index: 2;
   
 }
 .sb.open{
@@ -42,6 +42,8 @@ body{
     display:none;
     color: white;
     transition: transform 1s ease; 
+
+    margin-bottom: 10px;
 }
 
 

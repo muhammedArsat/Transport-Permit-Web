@@ -3,7 +3,7 @@ import CheckNavbar from "./components/ChcekNavbar";
 export default function CheckHome() {
   return (
     <div style={{ display: "flex" }}>
-      <CheckNavbar />
+   
       <div className="info">
         What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing
         and typesetting industry. Lorem Ipsum has been the industry's standard

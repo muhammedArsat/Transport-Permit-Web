@@ -1,31 +1,29 @@
 .approved-list-container {
   width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
+  overflow-x: auto; /* Enable horizontal scrolling for the entire container */
+  padding: 1rem;
+  margin-left: 200px;
 }
 
 .table-wrapper {
-  min-width: 100%;
+  width: 100%;
+  overflow-x: auto; /* Horizontal scrolling for the table wrapper */
 }
 
 table {
-  width: 100%;
+  width: 100%; /* Make sure the table takes the full width */
+  min-width: 1000px; /* Set a minimum width to prevent columns from collapsing on small screens */
   border-collapse: collapse;
 }
 
 th, td {
-  padding: 8px;
+  padding: 0.75rem;
   text-align: left;
   border: 1px solid #ddd;
 }
 
-@media (max-width: 768px) {
-  .approved-list-container {
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .table-wrapper {
-    min-width: 1000px; /* Adjust this value based on your table's content */
+@media screen and (max-width: 600px) {
+  table {
+    min-width: 800px; /* Adjust the minimum width based on your table content */
   }
 }

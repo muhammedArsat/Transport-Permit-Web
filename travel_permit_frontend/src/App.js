@@ -16,12 +16,14 @@ import TatkalPending from './TatkalPending';
 import Layout from './UserLayout';
 import Sb from './sb'
 import PaymentForm from './PaymentForm';
-import AdminLayout from './AdminLayout'
+import AdminLayout from './AdminLayout';
+import VerifierLayout from './VerifierLayout';
+import Tabletuto from './tabletuto';
 function App() {
   const router = createBrowserRouter([
     {
       path:"/tuto",
-      element:<Sb/>
+      element:<Tabletuto/>
     },
     {
       path:'/payment',
@@ -71,17 +73,20 @@ function App() {
       {
         path:"/takkal-pending",
         element:<TatkalPending/>
-      }
+      },
+      {
+        path:"/approved-list",
+        element:<ApprovedList/>
+      },
+      {
+        path:"/passed-list",
+        element:<PassedList/>
+      },
     ]
   },
-  {
-    path:"/approved-list",
-    element:<ApprovedList/>
-  },
-  {
-    path:"/passed-list",
-    element:<PassedList/>
-  },
+ {
+  element:<VerifierLayout/>,
+  children:[
     {
       path:"/check-home",
       element:<CheckHome/>
@@ -90,6 +95,9 @@ function App() {
       path:"/check-verify",
       element:<CheckVerify/>
     },
+  ]
+ }
+   
   
   ])
   return (
