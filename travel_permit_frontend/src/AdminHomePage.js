@@ -3,8 +3,8 @@ import Sidebar from "./components/AdminSidebar";
 import './css/AdminHomePage.css'
 export default function AdminHomePage() {
   return (
-    <div style={{display:"flex"}}>
-      <Sidebar />
+    <div>
+   
       <div className="info" >
         What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing
         and typesetting industry. Lorem Ipsum has been the industry's standard
