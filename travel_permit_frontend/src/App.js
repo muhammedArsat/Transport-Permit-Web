@@ -37,9 +37,6 @@ function App() {
       element:<UserRegister/>
     },
     {
-<<<<<<< HEAD
-      path:"/user-form/:{email}",
-=======
       element:<Layout/>,
       children:[
     
@@ -50,7 +47,7 @@ function App() {
   
     {
       path:"/user-form/:email",
->>>>>>> fb2707d21a481f358c0cbc3453d71cef365abcc5
+
       element:<UserFrom/>
     },
     {

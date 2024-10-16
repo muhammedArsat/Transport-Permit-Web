@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/Sidebar.css";
+import "../css/.css";
 import { useNavigate } from "react-router-dom";
 
 const AdminSidebar = () => {
