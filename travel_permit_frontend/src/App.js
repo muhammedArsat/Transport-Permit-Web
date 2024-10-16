@@ -28,7 +28,7 @@ function App() {
       element:<UserRegister/>
     },
     {
-      path:"/user-form",
+      path:"/user-form/:{email}",
       element:<UserFrom/>
     },
     {
