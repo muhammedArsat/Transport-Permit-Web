@@ -26,4 +26,8 @@ th, td {
   table {
     min-width: 800px; /* Adjust the minimum width based on your table content */
   }
+  .approved-list-container
+  {
+    margin: 0;
+  }
 }
