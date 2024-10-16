@@ -3,7 +3,7 @@ body{
     padding: 0;
 }
 .sb{
-    background-color:navy;
+    background-color: hsl(240, 38%, 28%); 
     position: fixed;
     top: 0;
     left: 0;
@@ -31,7 +31,9 @@ body{
 }
 
 .sb li:hover{
- background-color: black;
+ background-color: hsl(240, 38%, 28%); 
+ box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+ border-radius: 10px;
 }
 .sb-mob {
     background-color: blue;
