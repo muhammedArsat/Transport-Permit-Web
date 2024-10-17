@@ -43,25 +43,25 @@ function App() {
       children:[
     
     {
-      path:"/user-home/:email",
+      path:"/user-home",
       element:<UserHome/>
     },
   
     {
-      path:"/user-form/:email",
+      path:"/user-form",
 
       element:<UserFrom/>
     },
     {
-      path:"/takal-form/:email",
+      path:"/takal-form",
       element:<TakalUserForm/>
     },
     {
-      path:"/user-dashboard/:email",
+      path:"/user-dashboard",
       element:<UserDashboard/>
     },
     {
-      path:"my-permits/:email",
+      path:"/my-permits",
       element:<MyPermits/>
     },
   ]

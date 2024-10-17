@@ -2,12 +2,12 @@
 import React, { useEffect, useState } from "react";
 import Sb from "./sb";
 import './css/MyPermit.css';
-import { useParams } from "react-router-dom";
 
 const MyPermits = () => {
   const [permitData, setPermitData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const {email} = useParams();
+
+  const email = localStorage.getItem("Email");
 
   useEffect(() => {
 
@@ -27,7 +27,7 @@ const MyPermits = () => {
       alert("User is not logged in");
       setLoading(false);
     }
-  }, []);
+  }, [email]);
 
   if (loading) {
     return <div>Loading...</div>;

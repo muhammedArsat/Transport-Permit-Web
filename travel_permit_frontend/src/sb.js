@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './css/Sb.css';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Sb() {
-  const { email } = useParams();
   const [isSidebarOpen, SetSidebarOpen] = useState(false);
   const [isTakkal, setTakkal] = useState(false);
 
@@ -34,6 +33,7 @@ export default function Sb() {
 
   const handleLogout = () => {
     localStorage.removeItem("accesToken");
+    localStorage.removeItem("Email");
     window.location.href = "/";
   };
 
