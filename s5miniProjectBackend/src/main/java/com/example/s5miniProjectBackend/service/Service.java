@@ -41,4 +41,6 @@ public interface Service {
     long countPendingByEmail(String email);
 
     List<UserForm> getAppliedPermitsByEmail(String email);
+
+    long findTotApplicationByEmail(String email);
 }
