@@ -47,16 +47,16 @@ export default function Sb() {
       <div className={`sb ${isSidebarOpen ? 'open' : ''}`}>
         <div>Transport Website</div>
         <ul>
-          <Link to={`/user-home/${email}`}><li>Home</li></Link>
-          <Link to={`/user-form/${email}`}><li>User Form</li></Link>
+          <Link to={`/user-home`}><li>Home</li></Link>
+          <Link to={`/user-form`}><li>User Form</li></Link>
 
           {isTakkal ? (
-            <Link to={`/takal-form/${email}`}><li>Takkal Form</li></Link>
+            <Link to={`/takal-form`}><li>Takkal Form</li></Link>
           ) : (
             <li style={{ color: 'gray' }}>Takkal Form (only open between 11 am to 12 pm)</li>
           )}
 
-          <Link to={`/user-dashboard/${email}`}><li>Dashboard</li></Link>
+          <Link to={`/user-dashboard`}><li>Dashboard</li></Link>
           <li onClick={handleLogout}>Logout</li>
         </ul>
       </div>

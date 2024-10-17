@@ -6,7 +6,7 @@ import './css/UserDashboard.css'; // Create a separate CSS file for dashboard st
 const UserDashboard = () => {
   const [approvedCount, setApprovedCount] = useState(0);
   const [pendingCount, setPendingCount] = useState(0);
-  const {email} = useParams();
+  
 
 
   useEffect(() => {
@@ -53,7 +53,7 @@ const UserDashboard = () => {
             <p>{pendingCount}</p>
           </div>
         </div>
-        <Link to={`/my-permits/${email}`}>
+        <Link to={`/my-permits`}>
           <button className="
           butt">My Permits</button>
         </Link>

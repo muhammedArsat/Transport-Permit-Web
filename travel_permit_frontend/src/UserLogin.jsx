@@ -56,7 +56,8 @@ export default function UserLogin() {
         .then((data) => {
           console.log("Server Response:", data); // Debugging: Check the server's response
           if (data.message === "Login successful") {
-            navigate(`/user-home/${email}`);
+            navigate(`/user-home`);
+            localStorage.setItem("Email",email)
           } else if (data.message === "Incorrect password") {
             alert("Incorrect password");
           } else if (data.message === "User not registered") {
