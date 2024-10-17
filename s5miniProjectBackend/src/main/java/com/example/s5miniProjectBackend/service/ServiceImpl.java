@@ -141,7 +141,10 @@ public class ServiceImpl implements Service{
         return userFormRepository.findAppliedPermitsByEmail(email);
     }
 
-
+    @Override
+    public long findTotApplicationByEmail(String email) {
+        return userFormRepository.findTotApplicationByEmail(email);
+    }
 
 
 }

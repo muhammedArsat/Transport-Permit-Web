@@ -209,4 +209,10 @@ Takkal API's
         List<UserForm> appliedPermits = service.getAppliedPermitsByEmail(email);
         return ResponseEntity.ok(appliedPermits);
     }
+
+    @GetMapping("/totApplicationCount/{email}")
+    public ResponseEntity<Long> getTotApplicationCount(@PathVariable String email) {
+        long count = service.findTotApplicationByEmail(email);
+        return ResponseEntity.ok(count);
+    }
 }

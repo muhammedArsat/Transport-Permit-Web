@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import './css/UserForm.css';
 
-import { useParams } from 'react-router-dom';
-
 function Form() {
   const [name, setName] = useState('');
   const [vehicleNo, setVehicleNo] = useState('');
@@ -16,7 +14,7 @@ function Form() {
   const [amount, setAmount] = useState('');
   const [errors, setErrors] = useState({});
 
-  const { email } = useParams();
+  const email =localStorage.getItem("Email");
 
   const statesAndUTs = [
     "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", 

@@ -23,4 +23,7 @@ public interface UserFormRepository extends JpaRepository<UserForm, Integer> {
 
     @Query("SELECT u FROM UserForm u WHERE u.email = :email")
     List<UserForm> findAppliedPermitsByEmail(@Param("email") String email);
+
+    @Query("SELECT COUNT(u) FROM UserForm u WHERE u.email = :email")
+    long findTotApplicationByEmail(@Param("email") String email);
 }

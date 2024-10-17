@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom"; // Import Link for navigation
+import { Link } from "react-router-dom"; // Import Link for navigation
  // Importing the Sidebar component
 import './css/UserDashboard.css'; // Create a separate CSS file for dashboard styling
 
 const UserDashboard = () => {
   const [approvedCount, setApprovedCount] = useState(0);
   const [pendingCount, setPendingCount] = useState(0);
-  const {email} = useParams();
+  const [totApplicationCount, settotApplicationCount] = useState(0);
+  const email = localStorage.getItem("Email");
 
 
   useEffect(() => {
@@ -33,6 +34,15 @@ const UserDashboard = () => {
         .catch(error => {
           console.error("Error fetching pending permit count:", error);
         });
+        fetch(`http://localhost:8080/transportpermit/totApplicationCount/${email}`)
+        .then(response => response.json())
+        .then(data => {
+          console.log("Fetched Total Permits Count:", data);
+          settotApplicationCount(data);
+        })
+        .catch(error => {
+          console.error("Error fetching pending permit count:", error);
+        });
     } else {
       alert("User is not logged in");
     }
@@ -52,8 +62,12 @@ const UserDashboard = () => {
             <h3>Pending Applications</h3>
             <p>{pendingCount}</p>
           </div>
+          <div className="count-card">
+            <h3>Total Applications</h3>
+            <p>{totApplicationCount}</p>
+          </div>
         </div>
-        <Link to={`/my-permits/${email}`}>
+        <Link to={`/my-permits`}>
           <button className="
           butt">My Permits</button>
         </Link>
