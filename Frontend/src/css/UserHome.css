@@ -1,0 +1,83 @@
+/* Root container to prevent horizontal overflow */
+.user-home-container {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    box-sizing: border-box;
+    width: 100vw;
+    max-width: 100%; /* Ensure container doesn’t exceed viewport width */
+  }
+  
+  .info {
+    margin-left: 250px; /* Responsive left margin */
+    padding: 20px;
+    max-width: 90vw; /* Responsive width */
+    box-sizing: border-box;
+    text-align: left;
+    margin-top: 0px;
+ 
+
+  }
+  
+  .home-card-container {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    position: relative; /* Avoids absolute positioning issues */
+    
+    
+    /* Start position of the animation */
+    transform: translateX(100%); /* Move fully off-screen to the right */
+    
+    /* Updated animation */
+    animation:moveLeft 30s linear infinite;
+    max-width: 100%; /* Prevents container overflow */
+  }
+  
+  .home-card {
+    width: 500px; /* Allow cards to be responsive */
+  /* Set a maximum width */
+    border-radius: 8px;
+    padding: 10px;
+  height: 100px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #51415d;
+    color: white;
+  }
+  .home-card h4 {
+    margin-bottom: 10px;
+  }
+  
+  .home-card h3 {
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .info {
+      margin-top: 10px;
+      margin-left: 0;
+      padding: 10px;
+    }
+    
+    /* Make the cards adjust in size for smaller screens */
+    .home-card-container {
+      
+      align-items: flex-start;
+    }
+  
+    .home-card {
+     width: 500px;
+      padding: 20px;
+    }
+  }
+  
+  /* Updated keyframes to limit movement */
+  @keyframes moveLeft {
+    0% {
+    right: 0;
+    }
+    100% {
+      transform: translateX(calc(-100% - 20px)); /* Move entire width + gap */
+    }
+  }
+  

@@ -1,0 +1,91 @@
+/* UserDashboard.css */
+
+body {
+    margin: 0;
+    padding: 0;
+
+  }
+  
+  .dashboard-container {
+    display: flex;
+    height: 100vh;/* Full height of the viewport */
+  }
+  
+  .dashboard {
+    margin-left: 230px;
+    padding: 40px; /* Increased padding for a spacious look */
+
+    min-height: 100vh; /* Ensure it covers the full height */
+    margin-left: 250px; /* Account for sidebar width */
+  }
+  
+  .counts-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the count cards */
+  }
+  
+  .count-card {
+    background-color:#51415d;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.829); /* Prominent shadow */
+    padding: 30px;
+    text-align: center;
+    width: calc(33.333% - 40px); /* Three cards per row with spacing */
+    min-width: 250px;
+    max-width: 350px;
+    flex: 1;
+    box-sizing: border-box;
+  }
+
+  
+  .count-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color:white;
+  }
+  
+  .count-card p {
+    font-size: 2.5em; /* Bigger font for the number */
+    color:burlywood;
+  }
+  
+  .butt {
+    margin-top: 30px;
+    padding: 15px 30px; /* Larger button size */
+    background-color: #51415d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em; /* Increase font size for button */
+    transition: background-color 0.3s;
+  }
+  
+  .butt:hover {
+    background-color: #592c7c;
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard {
+      margin-left:30px;
+      padding: 20px;
+      padding-top: 60px;
+    }
+  
+    .counts-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .butt{
+      width: 100%;
+    }
+    .count-card {
+      width: 100%;
+      max-width: 350px;
+      margin-bottom: 20px;
+    }
+  }
+  
