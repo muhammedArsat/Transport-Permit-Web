@@ -1,0 +1,130 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.sb{
+    background: linear-gradient(
+        to right,
+        hsl(240, 17%, 30%),
+        hsl(240, 36%, 23%),
+        hsl(240, 32%, 17%),
+        hsl(240, 94%, 6%)
+      );
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    transform: translateX(0);
+    transition: transform 1s ease-in;
+    width: 200px;
+    z-index: 2;
+    font-family: 'poppins';
+  
+}
+.sb.open{
+    transform: translateX(-100);
+    transition: transform 1s ease; 
+
+}
+.sb ul{
+    padding: 10px;
+}
+.sb ul li{
+    list-style: none;
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sb li:hover{
+ background:linear-gradient(
+    to right,
+    hsl(240, 17%, 30%),
+    hsl(240, 36%, 23%),
+    hsl(240, 32%, 17%),
+    hsl(240, 94%, 6%)
+  );
+
+ box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+ border-radius: 10px;
+}
+ .sb p{
+    display: inline-block;
+    font-size: 17px;
+}
+.sb-mob {
+    background: linear-gradient(
+        to right,
+        hsl(240, 17%, 30%),
+        hsl(240, 36%, 23%),
+        hsl(240, 32%, 17%),
+        hsl(240, 94%, 6%)
+      );
+    width: 100vw;
+    height:75px;
+    align-items: center; /* Ensures vertical alignment in row */
+    padding: 15px;
+    margin: 0;
+    display:none;
+    color: white;
+    transition: transform 1s ease; 
+
+    margin-bottom: 10px;
+}
+.sb a{
+    text-decoration: none;
+    cursor: pointer;
+    color:white;
+}
+.nav-icons{
+    position: relative;
+right: 0px;
+}
+
+@media(max-width:768px)
+{
+    .sb{
+        display: none;
+
+    }
+    .sb.open{
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200px;
+        transition: transform 1s ease; 
+
+
+
+    }
+    .sb-mob {
+        flex-direction: row; /* Stack elements vertically on smaller screens */
+        display: flex; /* Ensure it becomes visible on mobile */
+        align-items: center;
+        justify-content: space-between;
+
+
+    }
+    .sb-mob:hover{
+        cursor: pointer;
+    }
+  
+}
+
+body.dark-theme{
+    background-color:#000000;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+body.light-theme{
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+
+}

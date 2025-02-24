@@ -1,0 +1,9 @@
+.profile-container{
+    margin-left: 250px;
+}
+@media(max-width:768px)
+{
+  .profile-container{
+    margin-left: 0px;
+  }
+}

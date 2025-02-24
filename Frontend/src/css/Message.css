@@ -1,0 +1,23 @@
+.message-container{
+    margin-left: 200px;
+    transition: all 0.3s ease-in-out;
+}
+.message{
+    padding: 10px;
+    text-align: center;
+}
+.success{
+    background-color: green;
+    color: white;
+}
+
+.failure{
+    background-color: red;
+    color: white;
+}
+
+@media(max-width:768px){
+    .message-container{
+        margin-left: 0px;
+    }
+}

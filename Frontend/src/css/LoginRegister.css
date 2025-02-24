@@ -1,0 +1,264 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  position: relative;
+}
+.body {
+  background-color: black;
+}
+
+.header img {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 50px;
+  height: auto;
+}
+
+.header h1 {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(
+    to bottom,
+    hsl(240, 62%, 66%),
+    hsl(240, 94%, 6%),
+    #9321e5
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  margin: 0 auto;
+}
+
+.line {
+  width: 100vw; /* Ensure it takes the full viewport width */
+  height: 10px;
+  background: linear-gradient(
+    to right,
+    hsl(240, 51%, 73%),
+    hsl(240, 32%, 44%),
+    hsl(240, 48%, 32%),
+    hsl(240, 94%, 6%)
+  );
+  margin: 0; /* Remove any margin */
+  padding: 0; /* Remove padding */
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  align-items: center;
+  box-shadow: 0 0 10px 0 rgba(139, 141, 255, 0.9);
+  width: 700px;
+  height: 400px;
+  background: linear-gradient(
+    to right,
+    hsl(240, 17%, 30%),
+    hsl(240, 33%, 22%),
+    hsl(240, 32%, 17%),
+    hsl(240, 94%, 6%) 50%,
+    white 50%
+  );
+  border-radius: 10px;
+  overflow: hidden;
+
+  margin-top: 100px;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+}
+
+.box img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+h1 {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
+}
+button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: hsl(240, 38%, 28%);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #51415d;
+}
+.whiteBox {
+  background: white;
+}
+.whiteBox h1 {
+  background: linear-gradient(
+    to bottom,
+    hsl(240, 62%, 66%),
+    hsl(240, 94%, 6%),
+    #9321e5
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.pinkBox {
+  font-family: "Poppins", sans-serif;
+  color: white;
+
+  background: linear-gradient(
+    to right,
+    hsl(240, 17%, 30%),
+    hsl(240, 36%, 23%),
+    hsl(240, 32%, 17%),
+    hsl(240, 94%, 6%)
+  );
+
+  padding: 20px;
+}
+.pinkBox h1 {
+  display: none;
+}
+.registerText {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 600;
+}
+.pinkBox button {
+  color: rgb(0, 50, 58);
+  border-radius: 10px;
+  height: 40px;
+  width: 200px;
+  cursor: pointer;
+  background-color: white;
+  text-decoration: none;
+}
+
+.otp-input{
+  border-color: black;
+  width: 30px;
+}
+.mobile-register{
+  display: none;
+}
+.admin-register{
+  margin-left: 450px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  width: 600px;
+
+}
+@media (max-width: 768px) {
+  .admin-register{
+    margin: 0;
+    width: 90%;
+    margin-left: 20px;
+  }
+  .header img {
+    width: 40px;
+    height: 30px;
+    object-fit: contain;
+  }
+  .line {
+    margin-top: 0px;
+    width: 100%;
+    height: 4px;
+  }
+  .box {
+    width: 100%;
+  }
+
+  .page {
+    margin-top: 50px;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    box-shadow: none;
+    background: white;
+  }
+  .pinkBox {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    font-size: 14px;
+    display: none;
+  }
+
+  .registerText {
+    display: none;
+  }
+
+  .whiteBox h1 {
+    display: block;
+  }
+  .pinkBox h1 {
+    display: block;
+    margin-top: 50px;
+    font-family: "Poppins";
+    /* background: linear-gradient(to bottom,hsl(240, 62%, 66%), hsl(240, 94%,6%), #9321e5);  */
+
+    color: transparent;
+    font-size: 36px;
+  }
+  .pinkBox a {
+    display: none;
+  }
+  .whiteBox {
+    width: 100%;
+    padding: 20px;
+    box-shadow: none;
+  }
+  input {
+    padding: 12px;
+    margin: 8px 0;
+  }
+  button {
+    padding: 12px;
+  }
+  button:hover {
+    background-color: #51415d;
+  }
+
+  .whiteBox a {
+    margin-left: 200px;
+  }
+  .mobile-register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    left: 50px;
+  }
+  .mobile-register a{
+    color: #9321e5;
+    position: relative;
+    top:-17px;
+    left: 10px;
+  
+  }
+
+}
